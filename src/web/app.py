@@ -323,6 +323,70 @@ async def api_f1_detailed():
     except Exception as e:
         return {"error": str(e)}
 
+@app.get("/champions-league")
+async def champions_league(request: Request):
+    """Champions League overall performances page"""
+    try:
+        latest_file = RESULTS_DIR / "champions_league" / "champions_league_latest.json"
+        all_time_file = RESULTS_DIR / "champions_league" / "champions_league_all_time.json"
+
+        data = {
+            'generated_at': 'No data available',
+            'sport': 'champions_league',
+            'total_performances': 0,
+            'performances': []
+        }
+
+        if latest_file.exists():
+            with open(latest_file) as f:
+                latest = json.load(f)
+                data['latest_performances'] = latest.get('performances', [])
+                data['latest_count'] = latest.get('total_performances', 0)
+
+        if all_time_file.exists():
+            with open(all_time_file) as f:
+                all_time = json.load(f)
+                data['performances'] = all_time.get('performances', [])
+                data['total_performances'] = all_time.get('total_performances', 0)
+
+        return templates.TemplateResponse("position.html", {"request": request, "data": data})
+    except Exception as e:
+        return templates.TemplateResponse("position.html", {
+            "request": request,
+            "data": {
+                'generated_at': f'Error: {str(e)}',
+                'sport': 'champions_league',
+                'total_performances': 0,
+                'performances': []
+            }
+        })
+
+@app.get("/api/champions-league/latest")
+async def api_champions_league_latest():
+    """API endpoint for latest Champions League performances"""
+    try:
+        latest_file = RESULTS_DIR / "champions_league" / "champions_league_latest.json"
+        if latest_file.exists():
+            with open(latest_file) as f:
+                return json.load(f)
+        else:
+            return {"error": "No data available"}
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.get("/api/champions-league/all_time")
+async def api_champions_league_all_time():
+    """API endpoint for all-time Champions League performances"""
+    try:
+        all_time_file = RESULTS_DIR / "champions_league" / "champions_league_all_time.json"
+        if all_time_file.exists():
+            with open(all_time_file) as f:
+                return json.load(f)
+        else:
+            return {"error": "No data available"}
+    except Exception as e:
+        return {"error": str(e)}
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""

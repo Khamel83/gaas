@@ -45,6 +45,14 @@
           }
         }
       }
+    },
+    "champions_league": {
+      "latest_file": "champions_league/champions_league_latest.json",
+      "all_time_file": "champions_league/champions_league_all_time.json",
+      "latest_count": 80,
+      "all_time_count": 180,
+      "last_updated": "2025-11-21T18:43:12.838277"
     }
-  }
+  },
+  "generated_at": "2025-11-21T18:43:12.838415"
 }
