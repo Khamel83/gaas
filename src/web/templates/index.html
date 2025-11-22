@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}GAAS - Home{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h2>Rare Statistical Performances in Sports</h2>
+    <p>Automatically detecting and cataloging extraordinary athletic performances across multiple sports</p>
+</div>
+
+<div class="sports-grid">
+    {% for sport, info in data.sports.items() %}
+    <div class="sport-card">
+        <h3>{{ sport|upper }}</h3>
+        <p class="sport-description">Rare performances detected</p>
+        <div class="positions">
+            {% for pos in info.positions %}
+            <a href="/{{ sport }}/{{ pos }}" class="position-link">
+                {{ pos|upper }}
+                {% if info.files and pos in info.files %}
+                <span class="badge">Live</span>
+                {% endif %}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="stats-summary">
+    <h3>System Status</h3>
+    <div class="stats-grid">
+        <div class="stat-item">
+            <h4>Last Updated</h4>
+            <p>{{ data.last_updated }}</p>
+        </div>
+        <div class="stat-item">
+            <h4>Sports Monitored</h4>
+            <p>{{ data.sports|length }}</p>
+        </div>
+        <div class="stat-item">
+            <h4>Total Positions</h4>
+            <p>{{ data.sports.values()|map(attribute='positions')|sum|length }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="info-section">
+    <h3>What is GAAS?</h3>
+    <p>GAAS (Gami As A Service) automatically analyzes sports data to find statistically rare performances.
+       We track historical data across multiple leagues and compute how often similar performances have occurred.</p>
+
+    <h4>Rarity Classifications</h4>
+    <ul class="rarity-legend">
+        <li><span class="rarity-badge never-before">Never Before</span> - Only occurred once in history</li>
+        <li><span class="rarity-badge extremely-rare">Extremely Rare</span> - 2-5 occurrences</li>
+        <li><span class="rarity-badge very-rare">Very Rare</span> - 6-10 occurrences</li>
+        <li><span class="rarity-badge rare">Rare</span> - 11-25 occurrences</li>
+        <li><span class="rarity-badge common">Common</span> - 26+ occurrences</li>
+    </ul>
+</div>
+{% endblock %}

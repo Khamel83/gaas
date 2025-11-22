@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}{{ data.sport|upper }} {{ data.position|upper }} Performances{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>{{ data.sport|upper }} {{ data.position|upper }}</h2>
+    <p class="updated-time">Last updated: {{ data.generated_at }}</p>
+    {% if 'total_performances' in data %}
+    <p class="performance-count">Total rare performances: {{ data.total_performances }}</p>
+    {% endif %}
+</div>
+
+{% if data.rare_performances %}
+<div class="performances">
+    {% for perf in data.rare_performances %}
+    <div class="perf-card {{ perf.rarity.classification }}">
+        <div class="perf-header">
+            <h3>{{ perf.game.player_name }}</h3>
+            <span class="rarity-label {{ perf.rarity.classification }}">{{ perf.rarity.classification|replace('_', ' ')|title }}</span>
+        </div>
+
+        <div class="perf-details">
+            <div class="game-info">
+                <p><strong>{{ perf.game.team }}</strong> vs {{ perf.game.opponent }}</p>
+                <p>{{ perf.game.game_date }} (Week {{ perf.game.week }}, {{ perf.game.season }})</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-group">
+                    <span class="stat-label">Rush Yards</span>
+                    <span class="stat-value">{{ perf.game.rush_yards }}</span>
+                </div>
+                <div class="stat-group">
+                    <span class="stat-label">Touchdowns</span>
+                    <span class="stat-value">{{ perf.game.rush_td }}</span>
+                </div>
+                <div class="stat-group">
+                    <span class="stat-label">Attempts</span>
+                    <span class="stat-value">{{ perf.game.rush_attempts }}</span>
+                </div>
+                <div class="stat-group">
+                    <span class="stat-label">Fumbles</span>
+                    <span class="stat-value">{{ perf.game.fumbles_lost }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="rarity-info">
+            <p><strong>Rarity Score:</strong> {{ perf.rarity.rarity_score }}/100</p>
+            <p><strong>Occurred:</strong> {{ perf.rarity.occurrence_count }} times in history</p>
+            {% if perf.rarity.last_occurrence %}
+            <p><strong>Last occurrence:</strong> {{ perf.rarity.last_occurrence.player_name }} ({{ perf.rarity.last_occurrence.game_date }})</p>
+            {% endif %}
+            <div class="rarity-buckets">
+                <small>Stat buckets: {{ perf.game.rush_yards_bucket }} yards, {{ perf.game.rush_td_bucket }} TDs, {{ perf.game.fumbles_bucket }} fumbles</small>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="no-data">
+    <h3>No rare performances found</h3>
+    <p>Either no data is available yet, or no performances met the rarity criteria in this time period.</p>
+</div>
+{% endif %}
+{% endblock %}
