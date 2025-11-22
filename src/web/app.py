@@ -199,6 +199,68 @@ async def api_nfl_rb_all_time():
     """API endpoint for all-time rarest RB performances (backward compatibility)"""
     return await api_nfl_position_all_time("rb")
 
+@app.get("/mlb")
+async def mlb(request: Request):
+    """MLB overall performances page"""
+    try:
+        summary_file = RESULTS_DIR / "mlb" / "mlb_summary.json"
+        detailed_file = RESULTS_DIR / "mlb" / "mlb_detailed.json"
+
+        data = {
+            'generated_at': 'No data available',
+            'sport': 'mlb',
+            'total_rare_performances': 0,
+            'rare_performances': []
+        }
+
+        if summary_file.exists():
+            with open(summary_file) as f:
+                summary = json.load(f)
+                data.update(summary)
+
+        if detailed_file.exists():
+            with open(detailed_file) as f:
+                detailed = json.load(f)
+                data['rare_performances'] = detailed.get('rare_performances', [])
+
+        return templates.TemplateResponse("position.html", {"request": request, "data": data})
+    except Exception as e:
+        return templates.TemplateResponse("position.html", {
+            "request": request,
+            "data": {
+                'generated_at': f'Error: {str(e)}',
+                'sport': 'mlb',
+                'total_rare_performances': 0,
+                'rare_performances': []
+            }
+        })
+
+@app.get("/api/mlb/summary")
+async def api_mlb_summary():
+    """API endpoint for MLB summary"""
+    try:
+        summary_file = RESULTS_DIR / "mlb" / "mlb_summary.json"
+        if summary_file.exists():
+            with open(summary_file) as f:
+                return json.load(f)
+        else:
+            return {"error": "No data available"}
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.get("/api/mlb/detailed")
+async def api_mlb_detailed():
+    """API endpoint for detailed MLB performances"""
+    try:
+        detailed_file = RESULTS_DIR / "mlb" / "mlb_detailed.json"
+        if detailed_file.exists():
+            with open(detailed_file) as f:
+                return json.load(f)
+        else:
+            return {"error": "No data available"}
+    except Exception as e:
+        return {"error": str(e)}
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
