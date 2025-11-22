@@ -132,14 +132,20 @@
 
     <script>
         async function loadData() {
-            try {
-                const response = await fetch('nba_latest.json');
-                const data = await response.json();
+            const container = document.getElementById('performances');
 
-                const container = document.getElementById('performances');
+            try {
+                container.innerHTML = '<p>Loading NBA performance data...</p>';
+
+                const response = await fetch('nba_latest.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
                 container.innerHTML = '';
 
-                if (data.rare_performances.length === 0) {
+                if (!data.rare_performances || data.rare_performances.length === 0) {
                     container.innerHTML = '<p>No rare performances found in the analyzed data.</p>';
                     return;
                 }
@@ -195,8 +201,7 @@
 
             } catch (error) {
                 console.error('Error loading data:', error);
-                document.getElementById('performances').innerHTML =
-                    '<p>Error loading performance data. Please check back later.</p>';
+                container.innerHTML = `<p>Error loading performance data: ${error.message}. Please check back later.</p>`;
             }
         }
 
