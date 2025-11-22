@@ -49,17 +49,17 @@
     "champions_league": {
       "latest_file": "champions_league/champions_league_latest.json",
       "all_time_file": "champions_league/champions_league_all_time.json",
-      "latest_count": 80,
-      "all_time_count": 180,
-      "last_updated": "2025-11-21T18:43:12.838277"
+      "latest_count": 65,
+      "all_time_count": 151,
+      "last_updated": "2025-11-21T18:51:32.619059"
     },
     "nhl": {
       "latest_file": "nhl/nhl_latest.json",
       "all_time_file": "nhl/nhl_all_time.json",
       "latest_count": 424,
       "all_time_count": 544,
-      "last_updated": "2025-11-21T18:45:09.402742"
+      "last_updated": "2025-11-21T18:51:33.147104"
     }
   },
-  "generated_at": "2025-11-21T18:45:09.402935"
+  "generated_at": "2025-11-21T18:51:33.147295"
 }
