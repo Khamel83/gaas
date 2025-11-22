@@ -1,0 +1,14 @@
+{
+  "total_rare_performances": 4,
+  "average_rarity_score": 99.86,
+  "rarest_performance": {
+    "player_name": "Wan'Dale Robinson",
+    "rarity_score": 99.97,
+    "classification": "extremely_rare"
+  },
+  "classification_breakdown": {
+    "rare": 3,
+    "extremely_rare": 1
+  },
+  "generated_at": "2025-11-21T18:01:37.839376"
+}
