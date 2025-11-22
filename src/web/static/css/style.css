@@ -46,6 +46,7 @@ nav {
 nav .container {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 nav a {
@@ -59,6 +60,39 @@ nav a {
 
 nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown Navigation */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-content {
+    display: none;
+    position: absolute;
+    background-color: #2d3748;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.nav-content a {
+    color: white;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    border-radius: 0;
+}
+
+.nav-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-dropdown:hover .nav-content {
+    display: block;
 }
 
 /* Main Content */

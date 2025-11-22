@@ -54,11 +54,11 @@ async def index(request: Request):
             }
         })
 
-@app.get("/nfl/rb")
-async def nfl_rb(request: Request):
-    """NFL RB performances page"""
+@app.get("/nfl/{position}")
+async def nfl_position(request: Request, position: str):
+    """NFL position performances page"""
     try:
-        latest_file = RESULTS_DIR / "nfl" / "rb_latest.json"
+        latest_file = RESULTS_DIR / "nfl" / f"{position}_latest.json"
         if latest_file.exists():
             with open(latest_file) as f:
                 data = json.load(f)
@@ -67,7 +67,7 @@ async def nfl_rb(request: Request):
             data = {
                 'generated_at': 'No data available',
                 'sport': 'nfl',
-                'position': 'rb',
+                'position': position,
                 'rare_performances': []
             }
 
@@ -78,10 +78,15 @@ async def nfl_rb(request: Request):
             "data": {
                 'generated_at': f'Error: {str(e)}',
                 'sport': 'nfl',
-                'position': 'rb',
+                'position': position,
                 'rare_performances': []
             }
         })
+
+@app.get("/nfl/rb")
+async def nfl_rb(request: Request):
+    """NFL RB performances page (backward compatibility)"""
+    return await nfl_position(request, "rb")
 
 @app.get("/api/nfl/rb/latest")
 async def api_nfl_rb_latest():
@@ -96,18 +101,41 @@ async def api_nfl_rb_latest():
     except Exception as e:
         return {"error": str(e)}
 
-@app.get("/api/nfl/rb/all_time")
-async def api_nfl_rb_all_time():
-    """API endpoint for all-time rarest RB performances"""
+@app.get("/api/nfl/{position}/latest")
+async def api_nfl_position_latest(position: str):
+    """API endpoint for latest position performances"""
     try:
-        all_time_file = RESULTS_DIR / "nfl" / "rb_all_time.json"
+        latest_file = RESULTS_DIR / "nfl" / f"{position}_latest.json"
+        if latest_file.exists():
+            with open(latest_file) as f:
+                return json.load(f)
+        else:
+            return {"error": f"No data available for {position}"}
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.get("/api/nfl/{position}/all_time")
+async def api_nfl_position_all_time(position: str):
+    """API endpoint for all-time rarest position performances"""
+    try:
+        all_time_file = RESULTS_DIR / "nfl" / f"{position}_all_time.json"
         if all_time_file.exists():
             with open(all_time_file) as f:
                 return json.load(f)
         else:
-            return {"error": "No data available"}
+            return {"error": f"No data available for {position}"}
     except Exception as e:
         return {"error": str(e)}
+
+@app.get("/api/nfl/rb/latest")
+async def api_nfl_rb_latest():
+    """API endpoint for latest RB performances (backward compatibility)"""
+    return await api_nfl_position_latest("rb")
+
+@app.get("/api/nfl/rb/all_time")
+async def api_nfl_rb_all_time():
+    """API endpoint for all-time rarest RB performances (backward compatibility)"""
+    return await api_nfl_position_all_time("rb")
 
 @app.get("/health")
 async def health_check():

@@ -38,11 +38,32 @@ class RarityEngine:
 
     def _find_matches(self, game):
         """Find matching stat lines in archive + current"""
+        # Build WHERE clause based on position
+        if self.position == 'qb':
+            where_clause = f"""
+                pass_yards_bucket = '{game['pass_yards_bucket']}'
+                AND pass_td_bucket = '{game['pass_td_bucket']}'
+                AND interceptions_bucket = '{game['interceptions_bucket']}'
+            """
+        elif self.position == 'rb':
+            where_clause = f"""
+                rush_yards_bucket = '{game['rush_yards_bucket']}'
+                AND rush_td_bucket = '{game['rush_td_bucket']}'
+                AND fumbles_bucket = '{game['fumbles_bucket']}'
+            """
+        elif self.position in ['wr', 'te']:
+            where_clause = f"""
+                receptions_bucket = '{game['receptions_bucket']}'
+                AND receiving_yards_bucket = '{game['receiving_yards_bucket']}'
+                AND receiving_td_bucket = '{game['receiving_td_bucket']}'
+            """
+        else:
+            # Default to just match on player_id if position unknown
+            where_clause = f"player_id = '{game['player_id']}'"
+
         query = f"""
             SELECT * FROM {self.position}_games
-            WHERE rush_yards_bucket = '{game['rush_yards_bucket']}'
-            AND rush_td_bucket = '{game['rush_td_bucket']}'
-            AND fumbles_bucket = '{game['fumbles_bucket']}'
+            WHERE {where_clause}
             ORDER BY game_date ASC
         """
 
@@ -85,11 +106,26 @@ class RarityEngine:
 
     def is_interesting(self, game):
         """Check if game is worth analyzing"""
-        return (
-            game['rush_yards'] >= 100 or
-            game['rush_td'] >= 2 or
-            game['fumbles_lost'] >= 2
-        )
+        if self.position == 'qb':
+            return (
+                game['pass_yards'] >= 300 or
+                game['pass_td'] >= 4 or
+                game['interceptions'] >= 3
+            )
+        elif self.position == 'rb':
+            return (
+                game['rush_yards'] >= 100 or
+                game['rush_td'] >= 2 or
+                game['fumbles_lost'] >= 2
+            )
+        elif self.position in ['wr', 'te']:
+            return (
+                game['receiving_yards'] >= 100 or
+                game['receiving_td'] >= 2 or
+                game['receptions'] >= 10
+            )
+        else:
+            return True  # Default to interesting for unknown positions
 
     def get_recent_performances(self, days=7):
         """Get recent interesting performances"""
@@ -98,10 +134,20 @@ class RarityEngine:
             if db.exists():
                 try:
                     conn = sqlite3.connect(db)
-                    # For demo, get recent games by simple ordering
+
+                    # Build query based on position
+                    if self.position == 'qb':
+                        where_clause = "pass_yards >= 300 OR pass_td >= 4 OR interceptions >= 3"
+                    elif self.position == 'rb':
+                        where_clause = "rush_yards >= 100 OR rush_td >= 2 OR fumbles_lost >= 2"
+                    elif self.position in ['wr', 'te']:
+                        where_clause = "receiving_yards >= 100 OR receiving_td >= 2 OR receptions >= 10"
+                    else:
+                        where_clause = "1=1"  # All games for unknown positions
+
                     query = f"""
                         SELECT * FROM {self.position}_games
-                        WHERE rush_yards >= 100 OR rush_td >= 2 OR fumbles_lost >= 2
+                        WHERE {where_clause}
                         ORDER BY game_date DESC
                         LIMIT 50
                     """

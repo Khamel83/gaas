@@ -8,7 +8,7 @@ from loguru import logger
 
 class NFLCollector:
     def __init__(self, position='rb'):
-        self.position = position
+        self.position = position.lower()
         self.current_season = self._get_season()
         self.current_db = Path("data/current/nfl_current.db")
         self._init_db()
@@ -20,52 +20,157 @@ class NFLCollector:
     def _init_db(self):
         self.current_db.parent.mkdir(parents=True, exist_ok=True)
         conn = sqlite3.connect(self.current_db)
-        conn.execute(f"""
-            CREATE TABLE IF NOT EXISTS {self.position}_games (
-                game_id TEXT,
-                player_id TEXT,
-                player_name TEXT,
-                position TEXT,
-                team TEXT,
-                opponent TEXT,
-                game_date TEXT,
-                season INTEGER,
-                week INTEGER,
-                rush_attempts INTEGER,
-                rush_yards INTEGER,
-                rush_td INTEGER,
-                fumbles_lost INTEGER,
-                rush_yards_bucket TEXT,
-                rush_td_bucket TEXT,
-                fumbles_bucket TEXT,
-                PRIMARY KEY (game_id, player_id)
-            )
-        """)
+
+        # Create table based on position
+        if self.position == 'qb':
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS qb_games (
+                    game_id TEXT,
+                    player_id TEXT,
+                    player_name TEXT,
+                    position TEXT,
+                    team TEXT,
+                    opponent TEXT,
+                    game_date TEXT,
+                    season INTEGER,
+                    week INTEGER,
+                    pass_yards INTEGER,
+                    pass_td INTEGER,
+                    interceptions INTEGER,
+                    completions INTEGER,
+                    attempts INTEGER,
+                    pass_yards_bucket TEXT,
+                    pass_td_bucket TEXT,
+                    interceptions_bucket TEXT,
+                    PRIMARY KEY (game_id, player_id)
+                )
+            """)
+        elif self.position == 'rb':
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS rb_games (
+                    game_id TEXT,
+                    player_id TEXT,
+                    player_name TEXT,
+                    position TEXT,
+                    team TEXT,
+                    opponent TEXT,
+                    game_date TEXT,
+                    season INTEGER,
+                    week INTEGER,
+                    rush_attempts INTEGER,
+                    rush_yards INTEGER,
+                    rush_td INTEGER,
+                    fumbles_lost INTEGER,
+                    rush_yards_bucket TEXT,
+                    rush_td_bucket TEXT,
+                    fumbles_bucket TEXT,
+                    PRIMARY KEY (game_id, player_id)
+                )
+            """)
+        elif self.position in ['wr', 'te']:
+            conn.execute(f"""
+                CREATE TABLE IF NOT EXISTS {self.position}_games (
+                    game_id TEXT,
+                    player_id TEXT,
+                    player_name TEXT,
+                    position TEXT,
+                    team TEXT,
+                    opponent TEXT,
+                    game_date TEXT,
+                    season INTEGER,
+                    week INTEGER,
+                    receptions INTEGER,
+                    receiving_yards INTEGER,
+                    receiving_td INTEGER,
+                    targets INTEGER,
+                    receptions_bucket TEXT,
+                    receiving_yards_bucket TEXT,
+                    receiving_td_bucket TEXT,
+                    PRIMARY KEY (game_id, player_id)
+                )
+            """)
         conn.close()
 
     def _apply_buckets(self, df):
-        def yard_bucket(y):
+        def pass_yards_bucket(y):
+            if y < 100: return '0-99'
+            elif y < 200: return '100-199'
+            elif y < 250: return '200-249'
+            elif y < 300: return '250-299'
+            elif y < 350: return '300-349'
+            elif y < 400: return '350-399'
+            else: return '400+'
+
+        def pass_td_bucket(t):
+            if t == 0: return '0'
+            elif t == 1: return '1'
+            elif t == 2: return '2'
+            elif t == 3: return '3'
+            elif t == 4: return '4'
+            else: return '5+'
+
+        def int_bucket(i):
+            if i == 0: return '0'
+            elif i == 1: return '1'
+            elif i == 2: return '2'
+            else: return '3+'
+
+        def rush_yards_bucket(y):
             if y < 50: return '0-49'
             elif y < 100: return '50-99'
             elif y < 150: return '100-149'
             elif y < 200: return '150-199'
             else: return '200+'
 
-        def td_bucket(t):
+        def rush_td_bucket(t):
             if t == 0: return '0'
             elif t == 1: return '1'
             elif t == 2: return '2'
             elif t == 3: return '3'
             else: return '4+'
 
-        def fum_bucket(f):
+        def fumbles_bucket(f):
             if f == 0: return '0'
             elif f == 1: return '1'
             else: return '2+'
 
-        df['rush_yards_bucket'] = df['rush_yards'].apply(yard_bucket)
-        df['rush_td_bucket'] = df['rush_td'].apply(td_bucket)
-        df['fumbles_bucket'] = df['fumbles_lost'].apply(fum_bucket)
+        def receptions_bucket(r):
+            if r < 3: return '0-2'
+            elif r < 5: return '3-4'
+            elif r < 7: return '5-6'
+            elif r < 10: return '7-9'
+            elif r < 12: return '10-11'
+            else: return '12+'
+
+        def receiving_yards_bucket(y):
+            if y < 30: return '0-29'
+            elif y < 50: return '30-49'
+            elif y < 75: return '50-74'
+            elif y < 100: return '75-99'
+            elif y < 125: return '100-124'
+            elif y < 150: return '125-149'
+            else: return '150+'
+
+        def receiving_td_bucket(t):
+            if t == 0: return '0'
+            elif t == 1: return '1'
+            elif t == 2: return '2'
+            else: return '3+'
+
+        # Apply buckets based on position
+        if self.position == 'qb':
+            df['pass_yards_bucket'] = df['pass_yards'].apply(pass_yards_bucket)
+            df['pass_td_bucket'] = df['pass_td'].apply(pass_td_bucket)
+            df['interceptions_bucket'] = df['interceptions'].apply(int_bucket)
+        elif self.position == 'rb':
+            df['rush_yards_bucket'] = df['rush_yards'].apply(rush_yards_bucket)
+            df['rush_td_bucket'] = df['rush_td'].apply(rush_td_bucket)
+            df['fumbles_bucket'] = df['fumbles_lost'].apply(fumbles_bucket)
+        elif self.position in ['wr', 'te']:
+            df['receptions_bucket'] = df['receptions'].apply(receptions_bucket)
+            df['receiving_yards_bucket'] = df['receiving_yards'].apply(receiving_yards_bucket)
+            df['receiving_td_bucket'] = df['receiving_td'].apply(receiving_td_bucket)
+
         return df
 
     def fetch_new_games(self):
