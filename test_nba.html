@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test NBA Loading</title>
+</head>
+<body>
+    <h1>NBA Data Test</h1>
+    <div id="result">Loading...</div>
+
+    <script>
+        async function testNBAData() {
+            const result = document.getElementById('result');
+
+            try {
+                result.innerHTML = 'Fetching data...';
+                const response = await fetch('nba_latest.json');
+                result.innerHTML = 'Got response, parsing JSON...';
+
+                const data = await response.json();
+                result.innerHTML = `Success! Found ${data.rare_performances.length} performances<br>`;
+
+                if (data.rare_performances.length > 0) {
+                    const perf = data.rare_performances[0];
+                    result.innerHTML += `First performance: ${perf.game.player_name} - ${perf.game.points} pts, ${perf.game.rebounds} reb, ${perf.game.assists} ast<br>`;
+                    result.innerHTML += `Classification: ${perf.rarity.classification}`;
+                }
+
+            } catch (error) {
+                result.innerHTML = `ERROR: ${error.message}<br>`;
+                console.error('Full error:', error);
+            }
+        }
+
+        testNBAData();
+    </script>
+</body>
+</html>
