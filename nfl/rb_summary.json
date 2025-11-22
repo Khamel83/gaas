@@ -1,0 +1,13 @@
+{
+  "total_rare_performances": 7,
+  "average_rarity_score": 99.58,
+  "rarest_performance": {
+    "player_name": "Saquon Barkley",
+    "rarity_score": 99.77,
+    "classification": "rare"
+  },
+  "classification_breakdown": {
+    "rare": 7
+  },
+  "generated_at": "2025-11-21T18:01:37.716920"
+}

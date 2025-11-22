@@ -1,0 +1,14 @@
+{
+  "total_rare_performances": 12,
+  "average_rarity_score": 99.37,
+  "rarest_performance": {
+    "player_name": "Baker Mayfield",
+    "rarity_score": 99.74,
+    "classification": "very_rare"
+  },
+  "classification_breakdown": {
+    "very_rare": 4,
+    "rare": 8
+  },
+  "generated_at": "2025-11-21T18:01:37.562697"
+}
