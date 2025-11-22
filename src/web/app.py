@@ -101,6 +101,68 @@ async def api_nfl_rb_latest():
     except Exception as e:
         return {"error": str(e)}
 
+@app.get("/nba")
+async def nba(request: Request):
+    """NBA overall performances page"""
+    try:
+        summary_file = RESULTS_DIR / "nba" / "nba_summary.json"
+        detailed_file = RESULTS_DIR / "nba" / "nba_detailed.json"
+
+        data = {
+            'generated_at': 'No data available',
+            'sport': 'nba',
+            'total_rare_performances': 0,
+            'rare_performances': []
+        }
+
+        if summary_file.exists():
+            with open(summary_file) as f:
+                summary = json.load(f)
+                data.update(summary)
+
+        if detailed_file.exists():
+            with open(detailed_file) as f:
+                detailed = json.load(f)
+                data['rare_performances'] = detailed.get('rare_performances', [])
+
+        return templates.TemplateResponse("position.html", {"request": request, "data": data})
+    except Exception as e:
+        return templates.TemplateResponse("position.html", {
+            "request": request,
+            "data": {
+                'generated_at': f'Error: {str(e)}',
+                'sport': 'nba',
+                'total_rare_performances': 0,
+                'rare_performances': []
+            }
+        })
+
+@app.get("/api/nba/summary")
+async def api_nba_summary():
+    """API endpoint for NBA summary"""
+    try:
+        summary_file = RESULTS_DIR / "nba" / "nba_summary.json"
+        if summary_file.exists():
+            with open(summary_file) as f:
+                return json.load(f)
+        else:
+            return {"error": "No data available"}
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.get("/api/nba/detailed")
+async def api_nba_detailed():
+    """API endpoint for detailed NBA performances"""
+    try:
+        detailed_file = RESULTS_DIR / "nba" / "nba_detailed.json"
+        if detailed_file.exists():
+            with open(detailed_file) as f:
+                return json.load(f)
+        else:
+            return {"error": "No data available"}
+    except Exception as e:
+        return {"error": str(e)}
+
 @app.get("/api/nfl/{position}/latest")
 async def api_nfl_position_latest(position: str):
     """API endpoint for latest position performances"""
