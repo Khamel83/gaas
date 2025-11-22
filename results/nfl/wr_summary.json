@@ -1,14 +1,10 @@
 {
-  "total_rare_performances": 4,
-  "average_rarity_score": 99.86,
-  "rarest_performance": {
-    "player_name": "Wan'Dale Robinson",
-    "rarity_score": 99.97,
-    "classification": "extremely_rare"
-  },
-  "classification_breakdown": {
-    "rare": 3,
-    "extremely_rare": 1
-  },
-  "generated_at": "2025-11-21T18:01:37.839376"
+  "generated_at": "2025-11-21T23:34:09.399362",
+  "sport": "nfl",
+  "position": "wr",
+  "recent_rare_count": 0,
+  "all_time_rare_count": 6,
+  "total_games_processed": 15383,
+  "data_range": "2018-2024",
+  "note": "Current data limited to 2018-2024. Historical accuracy limited."
 }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 - GAAS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+        }
+        .data-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        .data-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .coming-soon {
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .coming-soon h3 {
+            margin: 0 0 10px 0;
+        }
+        .nav-link {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .nav-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+        .nav-link a:hover {
+            background: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏎️ Formula 1 - GAAS</h1>
+        <p>Statistical Analysis of Racing Performance</p>
+    </div>
+
+    <div class="data-warning">
+        <strong>Data Status:</strong> F1 data is available (2018-2024) but analysis interface is under development.
+    </div>
+
+    <div class="data-card">
+        <h2>F1 Data Overview</h2>
+        <p>Historical and current Formula 1 racing data is being processed for rarity analysis.</p>
+
+        <div class="stat-grid">
+            <div class="stat-item">
+                <div class="stat-number">2,394</div>
+                <div class="stat-label">Total Races Analyzed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Seasons (2018-2024)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Drivers per Season</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">22-24</div>
+                <div class="stat-label">Races per Season</div>
+            </div>
+        </div>
+
+        <div class="coming-soon">
+            <h3>🚧 Coming Soon</h3>
+            <p>Rare performance analysis including:</p>
+            <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                <li>Unusual qualifying performances</li>
+                <li>Overtake statistics anomalies</li>
+                <li>Tire strategy effectiveness outliers</li>
+                <li>Weather condition exceptional performances</li>
+                <li>Underdog victory analyses</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="nav-link">
+        <a href="../index.html">← Back to GAAS Home</a>
+    </div>
+
+    <script>
+        // F1 interface ready for future data implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('F1 GAAS interface loaded');
+        });
+    </script>
+</body>
+</html>

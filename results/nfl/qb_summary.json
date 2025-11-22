@@ -1,14 +1,10 @@
 {
-  "total_rare_performances": 12,
-  "average_rarity_score": 99.37,
-  "rarest_performance": {
-    "player_name": "Baker Mayfield",
-    "rarity_score": 99.74,
-    "classification": "very_rare"
-  },
-  "classification_breakdown": {
-    "very_rare": 4,
-    "rare": 8
-  },
-  "generated_at": "2025-11-21T18:01:37.562697"
+  "generated_at": "2025-11-21T23:33:58.758061",
+  "sport": "nfl",
+  "position": "qb",
+  "recent_rare_count": 3,
+  "all_time_rare_count": 28,
+  "total_games_processed": 4659,
+  "data_range": "2018-2024",
+  "note": "Current data limited to 2018-2024. Historical accuracy limited."
 }

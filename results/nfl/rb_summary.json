@@ -1,13 +1,10 @@
 {
-  "total_rare_performances": 7,
-  "average_rarity_score": 99.58,
-  "rarest_performance": {
-    "player_name": "Saquon Barkley",
-    "rarity_score": 99.77,
-    "classification": "rare"
-  },
-  "classification_breakdown": {
-    "rare": 7
-  },
-  "generated_at": "2025-11-21T18:01:37.716920"
+  "generated_at": "2025-11-21T23:34:02.738361",
+  "sport": "nfl",
+  "position": "rb",
+  "recent_rare_count": 4,
+  "all_time_rare_count": 14,
+  "total_games_processed": 9742,
+  "data_range": "2018-2024",
+  "note": "Current data limited to 2018-2024. Historical accuracy limited."
 }

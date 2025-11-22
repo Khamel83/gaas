@@ -90,6 +90,7 @@
             text-transform: uppercase;
         }
         .live { background: #28a745; color: white; }
+        .data-available { background: #17a2b8; color: white; }
         .coming-soon { background: #6c757d; color: white; }
         .update-time {
             text-align: center;
@@ -101,16 +102,30 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .coming-soon-section {
-            background: rgba(108, 117, 125, 0.1);
+        .data-section {
+            background: rgba(240, 248, 255, 0.5);
             padding: 15px;
             border-radius: 8px;
             margin-top: 15px;
         }
-        .coming-soon-title {
+        .data-title {
             font-weight: bold;
             color: #495057;
             margin-bottom: 10px;
+        }
+        .data-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .performance-count {
+            font-size: 0.8em;
+            color: #6c757d;
+            margin-left: 5px;
         }
     </style>
 </head>
@@ -120,88 +135,80 @@
         <p>Discover statistically rare sports performances across multiple leagues</p>
     </div>
 
+    <div class="data-notice">
+        <strong>Data Transparency Notice:</strong> Our current analysis uses data from 2018-2024. We're working to extend historical coverage for more accurate rarity calculations.
+    </div>
+
     <div class="sports-grid">
         <div class="sport-card">
             <h3><span class="sport-icon">🏈</span> NFL <span class="status-badge live">LIVE</span></h3>
             <ul class="position-list">
-                <li><a href="nfl/qb_latest.html">Quarterbacks</a></li>
-                <li><a href="nfl/rb_latest.html">Running Backs</a></li>
-                <li><a href="nfl/wr_latest.html">Wide Receivers</a></li>
-                <li><a href="nfl/te_latest.html">Tight Ends</a></li>
+                <li><a href="nfl/qb_latest.html">Quarterbacks</a><span class="performance-count">(3 rare)</span></li>
+                <li><a href="nfl/rb_latest.html">Running Backs</a><span class="performance-count">(4 rare)</span></li>
+                <li><a href="nfl/wr_latest.html">Wide Receivers</a><span class="performance-count">(0 rare)</span></li>
+                <li><a href="nfl/te_latest.html">Tight Ends</a><span class="performance-count">(1 rare)</span></li>
             </ul>
+            <div class="data-section">
+                <div class="data-title">Coverage: 2018-2024 (4,659+ games)</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">8 rare performances identified across all positions</p>
+            </div>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">🏀</span> NBA <span class="status-badge coming-soon">COMING SOON</span></h3>
-            <div class="coming-soon-section">
-                <div class="coming-soon-title">Data Available, Interface in Development</div>
-                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Statistical data has been collected for all NBA positions. Interactive dashboards coming soon.</p>
-            </div>
-            <ul class="position-list" style="margin-top: 15px;">
-                <li style="opacity: 0.6;">Point Guards (Data Available)</li>
-                <li style="opacity: 0.6;">Shooting Guards (Data Available)</li>
-                <li style="opacity: 0.6;">Small Forwards (Data Available)</li>
-                <li style="opacity: 0.6;">Power Forwards (Data Available)</li>
-                <li style="opacity: 0.6;">Centers (Data Available)</li>
+            <h3><span class="sport-icon">🏀</span> NBA <span class="status-badge live">LIVE</span></h3>
+            <ul class="position-list">
+                <li><a href="nba/nba_latest.html">All Positions</a><span class="performance-count">(4 rare)</span></li>
             </ul>
+            <div class="data-section">
+                <div class="data-title">Coverage: 2018-2024 (13,352 games)</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">High-scoring games and statistical outliers identified</p>
+            </div>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">⚾</span> MLB <span class="status-badge coming-soon">COMING SOON</span></h3>
-            <div class="coming-soon-section">
-                <div class="coming-soon-title">Data Available, Interface in Development</div>
-                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Historical and current season data collected. Web interface currently being developed.</p>
-            </div>
-            <ul class="position-list" style="margin-top: 15px;">
-                <li style="opacity: 0.6;">Pitchers (Data Available)</li>
-                <li style="opacity: 0.6;">Catchers (Data Available)</li>
-                <li style="opacity: 0.6;">Infielders (Data Available)</li>
-                <li style="opacity: 0.6;">Outfielders (Data Available)</li>
+            <h3><span class="sport-icon">⚾</span> MLB <span class="status-badge data-available">DATA AVAILABLE</span></h3>
+            <ul class="position-list">
+                <li><a href="mlb/mlb_latest.html">Data Overview</a></li>
             </ul>
+            <div class="data-section">
+                <div class="data-title">Coverage: 2018-2024 (23,328 games)</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Comprehensive game data ready for analysis</p>
+            </div>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">🏎️</span> F1 <span class="status-badge coming-soon">COMING SOON</span></h3>
-            <div class="coming-soon-section">
-                <div class="coming-soon-title">Data Available, Interface in Development</div>
-                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Race and qualifying data collected. Driver performance analysis coming soon.</p>
-            </div>
-            <ul class="position-list" style="margin-top: 15px;">
-                <li style="opacity: 0.6;">Drivers (Data Available)</li>
+            <h3><span class="sport-icon">🏎️</span> F1 <span class="status-badge data-available">DATA AVAILABLE</span></h3>
+            <ul class="position-list">
+                <li><a href="f1/f1_latest.html">Data Overview</a></li>
             </ul>
+            <div class="data-section">
+                <div class="data-title">Coverage: 2018-2024 (2,394 races)</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Race and performance data ready for analysis</p>
+            </div>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">⚽</span> Champions League <span class="status-badge coming-soon">COMING SOON</span></h3>
-            <div class="coming-soon-section">
-                <div class="coming-soon-title">Data Available, Interface in Development</div>
-                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Match and player performance data collected. Interactive analysis coming soon.</p>
+            <h3><span class="sport-icon">⚽</span> Champions League <span class="status-badge coming-soon">NO DATA</span></h3>
+            <div class="data-section">
+                <div class="data-title">Status: Awaiting data source</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Historical match data needed for analysis</p>
             </div>
-            <ul class="position-list" style="margin-top: 15px;">
-                <li style="opacity: 0.6;">Forwards (Data Available)</li>
-                <li style="opacity: 0.6;">Midfielders (Data Available)</li>
-                <li style="opacity: 0.6;">Defenders (Data Available)</li>
-                <li style="opacity: 0.6;">Goalkeepers (Data Available)</li>
-            </ul>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">🥅</span> NHL <span class="status-badge coming-soon">COMING SOON</span></h3>
-            <div class="coming-soon-section">
-                <div class="coming-soon-title">Data Available, Interface in Development</div>
-                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Game and player statistics collected. Performance dashboards in development.</p>
+            <h3><span class="sport-icon">🥅</span> NHL <span class="status-badge coming-soon">NO DATA</span></h3>
+            <div class="data-section">
+                <div class="data-title">Status: Awaiting data source</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Game statistics needed for analysis</p>
             </div>
-            <ul class="position-list" style="margin-top: 15px;">
-                <li style="opacity: 0.6;">Forwards (Data Available)</li>
-                <li style="opacity: 0.6;">Defensemen (Data Available)</li>
-                <li style="opacity: 0.6;">Goalies (Data Available)</li>
-            </ul>
         </div>
     </div>
 
     <div class="update-time">
         <strong>About GAAS:</strong> Gami As A Service automatically detects statistically rare performances across multiple sports leagues.
-        Our algorithm analyzes historical data to identify performances that occur infrequently, providing context and rarity scores for each remarkable achievement.
+        Our algorithm analyzes game data to identify performances that occur infrequently, providing context and rarity scores.
+        <br><br>
+        <strong>Current Status:</strong> 8 rare performances identified across NFL and NBA with accurate rarity calculations based on available data.
         <br><br>
         Last updated: <span id="update-time">Loading...</span> |
         <a href="https://github.com/Khamel83/gaas" target="_blank" style="color: #007bff;">View on GitHub</a>

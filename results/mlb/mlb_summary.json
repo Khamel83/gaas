@@ -1,16 +1,7 @@
 {
-  "total_rare_performances": 88,
-  "average_rarity_score": 99.93,
-  "rarest_performance": {
-    "player_name": "Shohei Ohtani",
-    "rarity_score": 99.99,
-    "classification": "never_before"
-  },
-  "classification_breakdown": {
-    "never_before": 25,
-    "extremely_rare": 25,
-    "very_rare": 10,
-    "rare": 28
-  },
-  "generated_at": "2025-11-21T18:21:40.005587"
+  "generated_at": "2025-11-21T23:34:14.649309",
+  "sport": "mlb",
+  "status": "data_available",
+  "total_records": 23328,
+  "note": "Interface in development"
 }

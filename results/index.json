@@ -1,65 +1,35 @@
 {
-  "last_updated": "2025-11-21T18:01:37.931719",
-  "total_rare_performances": 39,
+  "generated_at": "2025-11-21T23:34:14.650196",
+  "last_updated": "2025-11-21T23:34:14.650202",
   "sports": {
     "nfl": {
+      "status": "complete",
       "positions": [
         "qb",
         "rb",
         "wr",
         "te"
       ],
-      "qb": {
-        "files": {
-          "qb": {
-            "latest": "nfl/qb_latest.json",
-            "all_time": "nfl/qb_all_time.json",
-            "summary": "nfl/qb_summary.json"
-          }
-        }
-      },
-      "rb": {
-        "files": {
-          "rb": {
-            "latest": "nfl/rb_latest.json",
-            "all_time": "nfl/rb_all_time.json",
-            "summary": "nfl/rb_summary.json"
-          }
-        }
-      },
-      "wr": {
-        "files": {
-          "wr": {
-            "latest": "nfl/wr_latest.json",
-            "all_time": "nfl/wr_all_time.json",
-            "summary": "nfl/wr_summary.json"
-          }
-        }
-      },
-      "te": {
-        "files": {
-          "te": {
-            "latest": "nfl/te_latest.json",
-            "all_time": "nfl/te_all_time.json",
-            "summary": "nfl/te_summary.json"
-          }
-        }
-      }
+      "data_range": "2018-2024",
+      "note": "Limited historical range but functionally complete"
+    },
+    "nba": {
+      "status": "basic_complete",
+      "data_range": "2018-2024"
+    },
+    "mlb": {
+      "status": "data_available",
+      "data_range": "2018-2024"
+    },
+    "f1": {
+      "status": "data_available",
+      "data_range": "2018-2024"
     },
     "champions_league": {
-      "latest_file": "champions_league/champions_league_latest.json",
-      "all_time_file": "champions_league/champions_league_all_time.json",
-      "latest_count": 65,
-      "all_time_count": 151,
-      "last_updated": "2025-11-21T18:51:32.619059"
+      "status": "no_data"
     },
     "nhl": {
-      "latest_file": "nhl/nhl_latest.json",
-      "all_time_file": "nhl/nhl_all_time.json",
-      "latest_count": 424,
-      "all_time_count": 544,
-      "last_updated": "2025-11-21T18:51:33.147104"
+      "status": "no_data"
     }
-  },
-  "generated_at": "2025-11-21T18:51:33.147295"
+  }
 }

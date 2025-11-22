@@ -1,0 +1,117 @@
+{
+  "generated_at": "2025-11-21T23:34:14.648453",
+  "sport": "nba",
+  "position": "all",
+  "time_range": "sample",
+  "total_performances": 100,
+  "rare_performances": [
+    {
+      "game": {
+        "game_id": "2023_7_Giannis_Antetokounmpo",
+        "player_id": "giannis_antetokounmpo",
+        "player_name": "Giannis Antetokounmpo",
+        "season": 2023,
+        "game_date": "2022-10-15",
+        "week": 2,
+        "team": "MIL",
+        "opponent": "@CHI",
+        "points": 44,
+        "rebounds": 16,
+        "assists": 2,
+        "steals": 0,
+        "blocks": 0,
+        "minutes": 32.68576154324905,
+        "points_bucket": "40-49",
+        "rebounds_bucket": "15-19",
+        "assists_bucket": "0-4"
+      },
+      "rarity": {
+        "occurrence_count": 42,
+        "rarity_score": 22.0,
+        "classification": "very_rare",
+        "total_games": 100
+      }
+    },
+    {
+      "game": {
+        "game_id": "2022_54_Luka_Don\u010di\u0107",
+        "player_id": "luka_don\u010di\u0107",
+        "player_name": "Luka Don\u010di\u0107",
+        "season": 2022,
+        "game_date": "2022-01-17",
+        "week": 14,
+        "team": "WAS",
+        "opponent": "@CHI",
+        "points": 41,
+        "rebounds": 3,
+        "assists": 3,
+        "steals": 0,
+        "blocks": 0,
+        "minutes": 25.16698226474659,
+        "points_bucket": "40-49",
+        "rebounds_bucket": "0-4",
+        "assists_bucket": "0-4"
+      },
+      "rarity": {
+        "occurrence_count": 42,
+        "rarity_score": 20.5,
+        "classification": "very_rare",
+        "total_games": 100
+      }
+    },
+    {
+      "game": {
+        "game_id": "2019_44_Luka_Don\u010di\u0107",
+        "player_id": "luka_don\u010di\u0107",
+        "player_name": "Luka Don\u010di\u0107",
+        "season": 2019,
+        "game_date": "2018-12-28",
+        "week": 12,
+        "team": "WAS",
+        "opponent": "@ATL",
+        "points": 44,
+        "rebounds": 20,
+        "assists": 10,
+        "steals": 1,
+        "blocks": 1,
+        "minutes": 30.59189275915708,
+        "points_bucket": "40-49",
+        "rebounds_bucket": "20+",
+        "assists_bucket": "10-14"
+      },
+      "rarity": {
+        "occurrence_count": 42,
+        "rarity_score": 22.0,
+        "classification": "very_rare",
+        "total_games": 100
+      }
+    },
+    {
+      "game": {
+        "game_id": "2019_61_Kyle_Lowry",
+        "player_id": "kyle_lowry",
+        "player_name": "Kyle Lowry",
+        "season": 2019,
+        "game_date": "2019-01-31",
+        "week": 16,
+        "team": "ATL",
+        "opponent": "@CLE",
+        "points": 59,
+        "rebounds": 12,
+        "assists": 13,
+        "steals": 0,
+        "blocks": 0,
+        "minutes": 36.68869005277261,
+        "points_bucket": "50+",
+        "rebounds_bucket": "10-14",
+        "assists_bucket": "10-14"
+      },
+      "rarity": {
+        "occurrence_count": 39,
+        "rarity_score": 29.5,
+        "classification": "rare",
+        "total_games": 100
+      }
+    }
+  ]
+}

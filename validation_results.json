@@ -1,0 +1,68 @@
+{
+  "timestamp": "2025-11-21T23:31:50.530790",
+  "sports": {
+    "nfl": {
+      "status": "success",
+      "positions": {
+        "qb": {
+          "season_range": "2018-2024",
+          "total_games": 4659,
+          "expected_range": "1999-2024",
+          "completeness": 26.9
+        },
+        "rb": {
+          "season_range": "2018-2024",
+          "total_games": 9742,
+          "expected_range": "1999-2024",
+          "completeness": 26.9
+        },
+        "wr": {
+          "season_range": "2018-2024",
+          "total_games": 15383,
+          "expected_range": "1999-2024",
+          "completeness": 26.9
+        },
+        "te": {
+          "season_range": "2018-2024",
+          "total_games": 7739,
+          "expected_range": "1999-2024",
+          "completeness": 26.9
+        }
+      }
+    },
+    "nba": {
+      "status": "success",
+      "season_range": "2018-2024",
+      "total_games": 13352,
+      "expected_range": "2010-2024",
+      "completeness": 46.7
+    },
+    "mlb": {
+      "status": "success",
+      "season_range": "2018-2024",
+      "total_games": 23328,
+      "expected_range": "1871-2024",
+      "completeness": 4.5
+    },
+    "f1": {
+      "status": "success",
+      "season_range": "2018-2024",
+      "total_races": 2394,
+      "expected_range": "1950-2024",
+      "completeness": 9.3
+    },
+    "champions_league": {
+      "status": "success",
+      "total_matches": 0,
+      "data_present": false,
+      "completeness": 0
+    },
+    "nhl": {
+      "status": "success",
+      "total_games": 0,
+      "data_present": false,
+      "completeness": 0
+    }
+  },
+  "overall_completeness": 12.1
+}
