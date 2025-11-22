@@ -1,0 +1,13 @@
+{
+  "total_rare_performances": 16,
+  "average_rarity_score": 98.58,
+  "rarest_performance": {
+    "driver_name": "Lewis Hamilton",
+    "rarity_score": 98.96,
+    "classification": "rare"
+  },
+  "classification_breakdown": {
+    "rare": 16
+  },
+  "generated_at": "2025-11-21T18:28:46.936210"
+}

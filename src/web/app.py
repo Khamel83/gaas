@@ -261,6 +261,68 @@ async def api_mlb_detailed():
     except Exception as e:
         return {"error": str(e)}
 
+@app.get("/f1")
+async def f1(request: Request):
+    """F1 overall performances page"""
+    try:
+        summary_file = RESULTS_DIR / "f1" / "f1_summary.json"
+        detailed_file = RESULTS_DIR / "f1" / "f1_detailed.json"
+
+        data = {
+            'generated_at': 'No data available',
+            'sport': 'f1',
+            'total_rare_performances': 0,
+            'rare_performances': []
+        }
+
+        if summary_file.exists():
+            with open(summary_file) as f:
+                summary = json.load(f)
+                data.update(summary)
+
+        if detailed_file.exists():
+            with open(detailed_file) as f:
+                detailed = json.load(f)
+                data['rare_performances'] = detailed.get('rare_performances', [])
+
+        return templates.TemplateResponse("position.html", {"request": request, "data": data})
+    except Exception as e:
+        return templates.TemplateResponse("position.html", {
+            "request": request,
+            "data": {
+                'generated_at': f'Error: {str(e)}',
+                'sport': 'f1',
+                'total_rare_performances': 0,
+                'rare_performances': []
+            }
+        })
+
+@app.get("/api/f1/summary")
+async def api_f1_summary():
+    """API endpoint for F1 summary"""
+    try:
+        summary_file = RESULTS_DIR / "f1" / "f1_summary.json"
+        if summary_file.exists():
+            with open(summary_file) as f:
+                return json.load(f)
+        else:
+            return {"error": "No data available"}
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.get("/api/f1/detailed")
+async def api_f1_detailed():
+    """API endpoint for detailed F1 performances"""
+    try:
+        detailed_file = RESULTS_DIR / "f1" / "f1_detailed.json"
+        if detailed_file.exists():
+            with open(detailed_file) as f:
+                return json.load(f)
+        else:
+            return {"error": "No data available"}
+    except Exception as e:
+        return {"error": str(e)}
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
