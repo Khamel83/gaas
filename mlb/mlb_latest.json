@@ -1,0 +1,269 @@
+{
+  "generated_at": "2025-11-22T00:10:18.256012",
+  "sport": "mlb",
+  "position": "all",
+  "time_range": "2018-2024",
+  "total_performances": 10,
+  "rare_performances": [
+    {
+      "game": {
+        "game_id": "2023-07-27_Mookie_Betts",
+        "player_id": "mookie_betts",
+        "player_name": "Mookie Betts",
+        "season": "2023-24",
+        "game_date": "2023-07-27",
+        "team": "LAA",
+        "opponent": "@BAL",
+        "hits": 5,
+        "runs": 3,
+        "home_runs": 3,
+        "rbis": 2,
+        "stolen_bases": 0,
+        "batting_avg": 1.667,
+        "slugging_pct": 3.667,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "3"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 70,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2019-10-05_Jose_Altuve",
+        "player_id": "jose_altuve",
+        "player_name": "Jose Altuve",
+        "season": "2023-24",
+        "game_date": "2019-10-05",
+        "team": "STL",
+        "opponent": "@BAL",
+        "hits": 5,
+        "runs": 4,
+        "home_runs": 3,
+        "rbis": 4,
+        "stolen_bases": 0,
+        "batting_avg": 1.0,
+        "slugging_pct": 2.2,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "3"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 70,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2024-05-29_Trea_Turner",
+        "player_id": "trea_turner",
+        "player_name": "Trea Turner",
+        "season": "2023-24",
+        "game_date": "2024-05-29",
+        "team": "TEX",
+        "opponent": "@HOU",
+        "hits": 5,
+        "runs": 3,
+        "home_runs": 2,
+        "rbis": 4,
+        "stolen_bases": 0,
+        "batting_avg": 1.0,
+        "slugging_pct": 1.8,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "2"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 45,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2024-06-25_Shohei_Ohtani",
+        "player_id": "shohei_ohtani",
+        "player_name": "Shohei Ohtani",
+        "season": "2023-24",
+        "game_date": "2024-06-25",
+        "team": "CIN",
+        "opponent": "@BOS",
+        "hits": 5,
+        "runs": 3,
+        "home_runs": 2,
+        "rbis": 4,
+        "stolen_bases": 0,
+        "batting_avg": 1.667,
+        "slugging_pct": 3.0,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "2"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 45,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2024-09-05_Aaron_Judge",
+        "player_id": "aaron_judge",
+        "player_name": "Aaron Judge",
+        "season": "2023-24",
+        "game_date": "2024-09-05",
+        "team": "PHI",
+        "opponent": "@SEA",
+        "hits": 5,
+        "runs": 3,
+        "home_runs": 2,
+        "rbis": 3,
+        "stolen_bases": 0,
+        "batting_avg": 1.0,
+        "slugging_pct": 1.8,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "2"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 45,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2022-09-24_Mookie_Betts",
+        "player_id": "mookie_betts",
+        "player_name": "Mookie Betts",
+        "season": "2023-24",
+        "game_date": "2022-09-24",
+        "team": "CIN",
+        "opponent": "@SF",
+        "hits": 5,
+        "runs": 3,
+        "home_runs": 2,
+        "rbis": 6,
+        "stolen_bases": 0,
+        "batting_avg": 1.0,
+        "slugging_pct": 1.8,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "2"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 45,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2022-06-24_Freddie_Freeman",
+        "player_id": "freddie_freeman",
+        "player_name": "Freddie Freeman",
+        "season": "2023-24",
+        "game_date": "2022-06-24",
+        "team": "TEX",
+        "opponent": "@SF",
+        "hits": 5,
+        "runs": 2,
+        "home_runs": 2,
+        "rbis": 6,
+        "stolen_bases": 0,
+        "batting_avg": 1.0,
+        "slugging_pct": 1.8,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "2"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 30,
+        "classification": "very_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2021-04-11_Nolan_Arenado",
+        "player_id": "nolan_arenado",
+        "player_name": "Nolan Arenado",
+        "season": "2023-24",
+        "game_date": "2021-04-11",
+        "team": "LAA",
+        "opponent": "@BOS",
+        "hits": 5,
+        "runs": 3,
+        "home_runs": 2,
+        "rbis": 5,
+        "stolen_bases": 0,
+        "batting_avg": 1.0,
+        "slugging_pct": 1.8,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "2"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 45,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2021-06-09_Mike_Trout",
+        "player_id": "mike_trout",
+        "player_name": "Mike Trout",
+        "season": "2023-24",
+        "game_date": "2021-06-09",
+        "team": "OAK",
+        "opponent": "@NYY",
+        "hits": 5,
+        "runs": 4,
+        "home_runs": 2,
+        "rbis": 4,
+        "stolen_bases": 0,
+        "batting_avg": 1.0,
+        "slugging_pct": 1.8,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "2"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 45,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    },
+    {
+      "game": {
+        "game_id": "2019-09-20_Mookie_Betts",
+        "player_id": "mookie_betts",
+        "player_name": "Mookie Betts",
+        "season": "2023-24",
+        "game_date": "2019-09-20",
+        "team": "LAD",
+        "opponent": "@STL",
+        "hits": 5,
+        "runs": 3,
+        "home_runs": 2,
+        "rbis": 3,
+        "stolen_bases": 0,
+        "batting_avg": 1.0,
+        "slugging_pct": 1.8,
+        "hits_bucket": "5+",
+        "home_runs_bucket": "2"
+      },
+      "rarity": {
+        "occurrence_count": 25,
+        "rarity_score": 45,
+        "classification": "extremely_rare",
+        "total_games": 23328
+      }
+    }
+  ]
+}
