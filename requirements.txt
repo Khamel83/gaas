@@ -1,0 +1,30 @@
+# Data sources
+nfl-data-py>=0.3.0
+nba-api>=1.4.0
+fastf1>=3.3.0
+pybaseball>=2.2.7
+
+# Core
+pandas>=2.1.0
+numpy>=1.26.0
+
+# Web
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+jinja2>=3.1.0
+
+# Utils
+httpx>=0.25.0
+schedule>=1.2.0
+gitpython>=3.1.40
+loguru>=0.7.0
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Quality
+ruff>=0.1.0
+black>=23.0.0
