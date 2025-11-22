@@ -1,0 +1,33 @@
+{
+  "site_name": "GAAS - Gami As A Service",
+  "honesty_level": "complete",
+  "what_we_actually_have": {
+    "nfl_qb": 4659,
+    "nfl_rb": 9742,
+    "nfl_wr": 15383,
+    "nfl_te": 7739,
+    "nba_games": 13352,
+    "mlb_games": 23328,
+    "f1_races": 2394
+  },
+  "what_we_provide": [
+    "\u2705 Accurate analysis of 2018-2024 sports data",
+    "\u2705 Enhanced context from historical research",
+    "\u2705 Professional visualization",
+    "\u2705 Transparent honesty about limitations",
+    "\u2705 Statistical validation within data scope"
+  ],
+  "what_we_dont_provide": [
+    "\u274c Complete 25+ year historical analysis (data access limitations)",
+    "\u274c Claims about comprehensive rarity without verification",
+    "\u274c Real-time game monitoring",
+    "\u274c Predictive analytics"
+  ],
+  "data_access_reality": {
+    "paywalls": "ESPN, Sports-Reference require subscriptions",
+    "scraping": "Legal and technical barriers",
+    "apis": "Most only provide current season data",
+    "academic_data": "Incomplete or access restricted"
+  },
+  "value_proposition": "We provide ACCURATE statistical analysis within verified scope, enhanced by honest historical research"
+}

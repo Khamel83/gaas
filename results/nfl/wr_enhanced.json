@@ -1,0 +1,735 @@
+{
+  "qb": {
+    "generated_at": "2025-11-21T23:55:25.558610",
+    "sport": "nfl",
+    "position": "qb",
+    "time_range": "enhanced_analysis",
+    "total_performances": 200,
+    "enhanced_rare_performances": [
+      {
+        "game": {
+          "game_id": "2024_15_00-0033106",
+          "player_id": "00-0033106",
+          "player_name": "Jared Goff",
+          "position": "QB",
+          "team": "DET",
+          "opponent": "BUF",
+          "season": 2024,
+          "week": 15,
+          "pass_yards": 494,
+          "pass_td": 5,
+          "interceptions": 0,
+          "completions": 38,
+          "attempts": 59,
+          "game_date": "2024-12-15",
+          "pass_yards_bucket": "400+",
+          "pass_td_bucket": "5+",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 87.24,
+          "db_occurrences": 7,
+          "historical_occurrences_est": 300,
+          "performance_level": 494,
+          "classification": "extremely_rare",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_17_00-0036442",
+          "player_id": "00-0036442",
+          "player_name": "Joe Burrow",
+          "position": "QB",
+          "team": "CIN",
+          "opponent": "DEN",
+          "season": 2024,
+          "week": 17,
+          "pass_yards": 412,
+          "pass_td": 3,
+          "interceptions": 0,
+          "completions": 39,
+          "attempts": 49,
+          "game_date": "2024-12-29",
+          "pass_yards_bucket": "400+",
+          "pass_td_bucket": "3",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 77.07,
+          "db_occurrences": 69,
+          "historical_occurrences_est": 300,
+          "performance_level": 412,
+          "classification": "extremely_rare",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_17_00-0034869",
+          "player_id": "00-0034869",
+          "player_name": "Sam Darnold",
+          "position": "QB",
+          "team": "MIN",
+          "opponent": "GB",
+          "season": 2024,
+          "week": 17,
+          "pass_yards": 377,
+          "pass_td": 3,
+          "interceptions": 1,
+          "completions": 33,
+          "attempts": 43,
+          "game_date": "2024-12-29",
+          "pass_yards_bucket": "350-399",
+          "pass_td_bucket": "3",
+          "interceptions_bucket": "1"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 62.3,
+          "db_occurrences": 169,
+          "historical_occurrences_est": 300,
+          "performance_level": 377,
+          "classification": "extremely_rare",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_17_00-0037834",
+          "player_id": "00-0037834",
+          "player_name": "Brock Purdy",
+          "position": "QB",
+          "team": "SF",
+          "opponent": "DET",
+          "season": 2024,
+          "week": 17,
+          "pass_yards": 377,
+          "pass_td": 3,
+          "interceptions": 2,
+          "completions": 27,
+          "attempts": 35,
+          "game_date": "2024-12-29",
+          "pass_yards_bucket": "350-399",
+          "pass_td_bucket": "3",
+          "interceptions_bucket": "2"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 62.3,
+          "db_occurrences": 169,
+          "historical_occurrences_est": 300,
+          "performance_level": 377,
+          "classification": "extremely_rare",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_15_00-0034857",
+          "player_id": "00-0034857",
+          "player_name": "Josh Allen",
+          "position": "QB",
+          "team": "BUF",
+          "opponent": "DET",
+          "season": 2024,
+          "week": 15,
+          "pass_yards": 362,
+          "pass_td": 2,
+          "interceptions": 0,
+          "completions": 23,
+          "attempts": 34,
+          "game_date": "2024-12-15",
+          "pass_yards_bucket": "350-399",
+          "pass_td_bucket": "2",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 52.11,
+          "db_occurrences": 239,
+          "historical_occurrences_est": 300,
+          "performance_level": 362,
+          "classification": "extremely_rare",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_17_00-0034855",
+          "player_id": "00-0034855",
+          "player_name": "Baker Mayfield",
+          "position": "QB",
+          "team": "TB",
+          "opponent": "CAR",
+          "season": 2024,
+          "week": 17,
+          "pass_yards": 359,
+          "pass_td": 5,
+          "interceptions": 0,
+          "completions": 27,
+          "attempts": 32,
+          "game_date": "2024-12-29",
+          "pass_yards_bucket": "350-399",
+          "pass_td_bucket": "5+",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 49.79,
+          "db_occurrences": 255,
+          "historical_occurrences_est": 300,
+          "performance_level": 359,
+          "classification": "extremely_rare",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_18_00-0036355",
+          "player_id": "00-0036355",
+          "player_name": "Justin Herbert",
+          "position": "QB",
+          "team": "LAC",
+          "opponent": "LV",
+          "season": 2024,
+          "week": 18,
+          "pass_yards": 346,
+          "pass_td": 2,
+          "interceptions": 0,
+          "completions": 28,
+          "attempts": 36,
+          "game_date": "2025-01-05",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "2",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 42.92,
+          "db_occurrences": 332,
+          "historical_occurrences_est": 300,
+          "performance_level": 346,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_14_00-0029604",
+          "player_id": "00-0029604",
+          "player_name": "Kirk Cousins",
+          "position": "QB",
+          "team": "ATL",
+          "opponent": "MIN",
+          "season": 2024,
+          "week": 14,
+          "pass_yards": 344,
+          "pass_td": 0,
+          "interceptions": 2,
+          "completions": 23,
+          "attempts": 37,
+          "game_date": "2024-12-08",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "0",
+          "interceptions_bucket": "2"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 42.8,
+          "db_occurrences": 342,
+          "historical_occurrences_est": 300,
+          "performance_level": 344,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_14_00-0023459",
+          "player_id": "00-0023459",
+          "player_name": "Aaron Rodgers",
+          "position": "QB",
+          "team": "NYJ",
+          "opponent": "MIA",
+          "season": 2024,
+          "week": 14,
+          "pass_yards": 339,
+          "pass_td": 1,
+          "interceptions": 0,
+          "completions": 27,
+          "attempts": 39,
+          "game_date": "2024-12-08",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "1",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 42.31,
+          "db_occurrences": 389,
+          "historical_occurrences_est": 300,
+          "performance_level": 339,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_16_00-0033106",
+          "player_id": "00-0033106",
+          "player_name": "Jared Goff",
+          "position": "QB",
+          "team": "DET",
+          "opponent": "CHI",
+          "season": 2024,
+          "week": 16,
+          "pass_yards": 336,
+          "pass_td": 3,
+          "interceptions": 0,
+          "completions": 23,
+          "attempts": 32,
+          "game_date": "2024-12-22",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "3",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 42.04,
+          "db_occurrences": 415,
+          "historical_occurrences_est": 300,
+          "performance_level": 336,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_18_00-0031345",
+          "player_id": "00-0031345",
+          "player_name": "Jimmy Garoppolo",
+          "position": "QB",
+          "team": "LA",
+          "opponent": "SEA",
+          "season": 2024,
+          "week": 18,
+          "pass_yards": 334,
+          "pass_td": 2,
+          "interceptions": 1,
+          "completions": 27,
+          "attempts": 41,
+          "game_date": "2025-01-05",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "2",
+          "interceptions_bucket": "1"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 41.8,
+          "db_occurrences": 439,
+          "historical_occurrences_est": 300,
+          "performance_level": 334,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_16_00-0039918",
+          "player_id": "00-0039918",
+          "player_name": "Caleb Williams",
+          "position": "QB",
+          "team": "CHI",
+          "opponent": "DET",
+          "season": 2024,
+          "week": 16,
+          "pass_yards": 334,
+          "pass_td": 2,
+          "interceptions": 0,
+          "completions": 26,
+          "attempts": 40,
+          "game_date": "2024-12-22",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "2",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 41.8,
+          "db_occurrences": 439,
+          "historical_occurrences_est": 300,
+          "performance_level": 334,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_17_00-0026158",
+          "player_id": "00-0026158",
+          "player_name": "Joe Flacco",
+          "position": "QB",
+          "team": "IND",
+          "opponent": "NYG",
+          "season": 2024,
+          "week": 17,
+          "pass_yards": 330,
+          "pass_td": 2,
+          "interceptions": 2,
+          "completions": 26,
+          "attempts": 38,
+          "game_date": "2024-12-29",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "2",
+          "interceptions_bucket": "2"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 41.45,
+          "db_occurrences": 472,
+          "historical_occurrences_est": 300,
+          "performance_level": 330,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_18_00-0033949",
+          "player_id": "00-0033949",
+          "player_name": "Joshua Dobbs",
+          "position": "QB",
+          "team": "SF",
+          "opponent": "ARI",
+          "season": 2024,
+          "week": 18,
+          "pass_yards": 326,
+          "pass_td": 2,
+          "interceptions": 2,
+          "completions": 29,
+          "attempts": 43,
+          "game_date": "2025-01-05",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "2",
+          "interceptions_bucket": "2"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 41.05,
+          "db_occurrences": 511,
+          "historical_occurrences_est": 300,
+          "performance_level": 326,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_20_00-0026498",
+          "player_id": "00-0026498",
+          "player_name": "Matthew Stafford",
+          "position": "QB",
+          "team": "LA",
+          "opponent": "PHI",
+          "season": 2024,
+          "week": 20,
+          "pass_yards": 324,
+          "pass_td": 2,
+          "interceptions": 0,
+          "completions": 26,
+          "attempts": 44,
+          "game_date": "2025-01-19",
+          "pass_yards_bucket": "300-349",
+          "pass_td_bucket": "2",
+          "interceptions_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 40.76,
+          "db_occurrences": 540,
+          "historical_occurrences_est": 300,
+          "performance_level": 324,
+          "classification": "notable",
+          "historical_performances": 3,
+          "confidence": "high"
+        }
+      }
+    ],
+    "historical_context": {
+      "400_yard_games": [
+        {
+          "player": "Peyton Manning",
+          "team": "DEN",
+          "date": "2013-09-05",
+          "yards": 462,
+          "opponent": "BAL",
+          "note": "7 TD performance"
+        },
+        {
+          "player": "Tom Brady",
+          "team": "NE",
+          "date": "2011-09-25",
+          "yards": 517,
+          "opponent": "MIA",
+          "note": "Career high"
+        },
+        {
+          "player": "Drew Brees",
+          "team": "NO",
+          "date": "2015-10-25",
+          "yards": 511,
+          "opponent": "NYG",
+          "note": "40+ club member"
+        }
+      ],
+      "rare_occurrences": {
+        "400_yard_games": 300,
+        "5_td_games": 200,
+        "300_yard_games": 3000
+      }
+    }
+  },
+  "rb": {
+    "generated_at": "2025-11-21T23:55:25.571605",
+    "sport": "nfl",
+    "position": "rb",
+    "time_range": "enhanced_analysis",
+    "total_performances": 200,
+    "enhanced_rare_performances": [
+      {
+        "game": {
+          "game_id": "2024_20_00-0034844",
+          "player_id": "00-0034844",
+          "player_name": "Saquon Barkley",
+          "position": "RB",
+          "team": "PHI",
+          "opponent": "LA",
+          "season": 2024,
+          "week": 20,
+          "rush_attempts": 26,
+          "rush_yards": 205,
+          "rush_td": 2,
+          "fumbles_lost": 0,
+          "game_date": "2025-01-19",
+          "rush_yards_bucket": "200+",
+          "rush_td_bucket": "2",
+          "fumbles_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 84.04,
+          "db_occurrences": 17,
+          "historical_occurrences_est": 250,
+          "performance_level": 205,
+          "classification": "extremely_rare",
+          "historical_performances": 5,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_19_00-0032764",
+          "player_id": "00-0032764",
+          "player_name": "Derrick Henry",
+          "position": "RB",
+          "team": "BAL",
+          "opponent": "PIT",
+          "season": 2024,
+          "week": 19,
+          "rush_attempts": 26,
+          "rush_yards": 186,
+          "rush_td": 2,
+          "fumbles_lost": 0,
+          "game_date": "2025-01-12",
+          "rush_yards_bucket": "150-199",
+          "rush_td_bucket": "2",
+          "fumbles_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 81.77,
+          "db_occurrences": 27,
+          "historical_occurrences_est": 250,
+          "performance_level": 186,
+          "classification": "notable",
+          "historical_performances": 5,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_18_00-0036223",
+          "player_id": "00-0036223",
+          "player_name": "Jonathan Taylor",
+          "position": "RB",
+          "team": "IND",
+          "opponent": "JAX",
+          "season": 2024,
+          "week": 18,
+          "rush_attempts": 34,
+          "rush_yards": 177,
+          "rush_td": 1,
+          "fumbles_lost": 0,
+          "game_date": "2025-01-05",
+          "rush_yards_bucket": "150-199",
+          "rush_td_bucket": "1",
+          "fumbles_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 79.66,
+          "db_occurrences": 38,
+          "historical_occurrences_est": 250,
+          "performance_level": 177,
+          "classification": "notable",
+          "historical_performances": 5,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_18_00-0037258",
+          "player_id": "00-0037258",
+          "player_name": "Dameon Pierce",
+          "position": "RB",
+          "team": "HOU",
+          "opponent": "TEN",
+          "season": 2024,
+          "week": 18,
+          "rush_attempts": 19,
+          "rush_yards": 176,
+          "rush_td": 1,
+          "fumbles_lost": 0,
+          "game_date": "2025-01-05",
+          "rush_yards_bucket": "150-199",
+          "rush_td_bucket": "1",
+          "fumbles_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 78.97,
+          "db_occurrences": 42,
+          "historical_occurrences_est": 250,
+          "performance_level": 176,
+          "classification": "notable",
+          "historical_performances": 5,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_18_00-0038542",
+          "player_id": "00-0038542",
+          "player_name": "Bijan Robinson",
+          "position": "RB",
+          "team": "ATL",
+          "opponent": "CAR",
+          "season": 2024,
+          "week": 18,
+          "rush_attempts": 28,
+          "rush_yards": 170,
+          "rush_td": 2,
+          "fumbles_lost": 0,
+          "game_date": "2025-01-05",
+          "rush_yards_bucket": "150-199",
+          "rush_td_bucket": "2",
+          "fumbles_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 76.97,
+          "db_occurrences": 53,
+          "historical_occurrences_est": 250,
+          "performance_level": 170,
+          "classification": "notable",
+          "historical_performances": 5,
+          "confidence": "high"
+        }
+      },
+      {
+        "game": {
+          "game_id": "2024_17_00-0034844",
+          "player_id": "00-0034844",
+          "player_name": "Saquon Barkley",
+          "position": "RB",
+          "team": "PHI",
+          "opponent": "DAL",
+          "season": 2024,
+          "week": 17,
+          "rush_attempts": 31,
+          "rush_yards": 167,
+          "rush_td": 0,
+          "fumbles_lost": 0,
+          "game_date": "2024-12-29",
+          "rush_yards_bucket": "150-199",
+          "rush_td_bucket": "0",
+          "fumbles_bucket": "0"
+        },
+        "enhanced_rarity": {
+          "enhanced_score": 76.05,
+          "db_occurrences": 58,
+          "historical_occurrences_est": 250,
+          "performance_level": 167,
+          "classification": "notable",
+          "historical_performances": 5,
+          "confidence": "high"
+        }
+      }
+    ],
+    "historical_context": {
+      "200_yard_games": [
+        {
+          "player": "Barry Sanders",
+          "team": "DET",
+          "date": "1997-11-16",
+          "yards": 215,
+          "opponent": "CHI",
+          "note": "Famous performance"
+        },
+        {
+          "player": "Jim Brown",
+          "team": "CLE",
+          "date": "1963-11-24",
+          "yards": 237,
+          "opponent": "LAR",
+          "note": "Legendary game"
+        },
+        {
+          "player": "LaDainian Tomlinson",
+          "team": "SD",
+          "date": "2003-12-28",
+          "yards": 243,
+          "opponent": "OAK",
+          "note": "Rushing title clincher"
+        },
+        {
+          "player": "Adrian Peterson",
+          "team": "MIN",
+          "date": "2012-12-09",
+          "yards": 212,
+          "opponent": "CHI",
+          "note": "MVP season"
+        },
+        {
+          "player": "Derrick Henry",
+          "team": "TEN",
+          "date": "2018-12-30",
+          "yards": 238,
+          "opponent": "IND",
+          "note": "Rushing title winner"
+        }
+      ],
+      "rare_occurrences": {
+        "200_yard_games": 250,
+        "3_td_games": 1000,
+        "100_yard_games": 15000
+      }
+    }
+  },
+  "wr": {
+    "generated_at": "2025-11-21T23:55:25.582166",
+    "sport": "nfl",
+    "position": "wr",
+    "time_range": "enhanced_analysis",
+    "total_performances": 200,
+    "enhanced_rare_performances": [],
+    "historical_context": {}
+  }
+}

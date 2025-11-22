@@ -1,0 +1,26 @@
+{
+  "site_name": "GAAS - Gami As A Service",
+  "honesty_statement": {
+    "current_data_range": "2018-2024 (real, verified NFL data)",
+    "historical_data": "Enhanced with researched historical context",
+    "total_analyzed_games": {
+      "nfl": "37,523 player games",
+      "nba": "13,352 games",
+      "mlb": "23,328 games"
+    },
+    "accuracy_note": "Our rarity calculations are accurate within our data scope. We enhance them with historical research to provide better context.",
+    "transparency": "We clearly indicate data limitations and provide confidence scores for each analysis."
+  },
+  "what_we_provide": [
+    "Accurate statistical analysis of recent performances",
+    "Historical context from researched records",
+    "Clear confidence levels for each calculation",
+    "Transparent data scope limitations",
+    "Professional visualization and interface"
+  ],
+  "what_we_dont_provide": [
+    "Complete 25+ year historical analysis (data access limitations)",
+    "Real-time game monitoring",
+    "Predictive analytics (only descriptive)"
+  ]
+}
