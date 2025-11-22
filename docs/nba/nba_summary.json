@@ -1,0 +1,15 @@
+{
+  "total_rare_performances": 17,
+  "average_rarity_score": 99.77,
+  "rarest_performance": {
+    "player_name": "Stephen Curry",
+    "rarity_score": 99.97,
+    "classification": "extremely_rare"
+  },
+  "classification_breakdown": {
+    "extremely_rare": 1,
+    "very_rare": 3,
+    "rare": 13
+  },
+  "generated_at": "2025-11-21T18:07:00.889440"
+}
