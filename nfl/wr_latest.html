@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Wide Receivers - GAAS</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+        }
+        .performance-card {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid;
+        }
+        .rare { border-left-color: #f39c12; }
+        .very-rare { border-left-color: #e67e22; }
+        .extremely-rare { border-left-color: #e74c3c; }
+        .never-before { border-left-color: #8e44ad; }
+
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .player-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .rarity-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: white;
+            font-size: 0.9em;
+        }
+        .rare { background: #f39c12; }
+        .very-rare { background: #e67e22; }
+        .extremely-rare { background: #e74c3c; }
+        .never-before { background: #8e44ad; }
+
+        .game-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-label {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+        }
+        .stat-value {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .rarity-info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .rarity-score {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .occurrence-info {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin: 5px 0;
+        }
+
+        .nav-link {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .nav-link a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏈 NFL Wide Receivers - Rare Performances</h1>
+        <p>Last 7 Days of Statistically Outstanding Games</p>
+    </div>
+
+    <div id="performances"></div>
+
+    <div class="nav-link">
+        <a href="../index.html">← Back to GAAS Home</a>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                const response = await fetch('wr_latest.json');
+                const data = await response.json();
+
+                const container = document.getElementById('performances');
+                container.innerHTML = '';
+
+                if (data.rare_performances.length === 0) {
+                    container.innerHTML = '<p>No rare performances found in the last 7 days.</p>';
+                    return;
+                }
+
+                data.rare_performances.forEach(perf => {
+                    const card = document.createElement('div');
+                    card.className = `performance-card ${perf.rarity.classification}`;
+
+                    const gameDate = new Date(perf.game.game_date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    card.innerHTML = `
+                        <div class="player-header">
+                            <div class="player-name">${perf.game.player_name}</div>
+                            <div class="rarity-badge ${perf.rarity.classification}">
+                                ${perf.rarity.classification.replace('_', ' ').toUpperCase()}
+                            </div>
+                        </div>
+
+                        <div class="game-info">
+                            <div class="stat">
+                                <div class="stat-label">Team</div>
+                                <div class="stat-value">${perf.game.team} vs ${perf.game.opponent}</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Date</div>
+                                <div class="stat-value">${gameDate}</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Receptions</div>
+                                <div class="stat-value">${perf.game.receptions || 0}</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Receiving Yards</div>
+                                <div class="stat-value">${perf.game.receiving_yards || 0}</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Receiving TDs</div>
+                                <div class="stat-value">${perf.game.receiving_td || 0}</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-label">Targets</div>
+                                <div class="stat-value">${perf.game.targets || 0}</div>
+                            </div>
+                        </div>
+
+                        <div class="rarity-info">
+                            <div class="rarity-score">Rarity Score: ${perf.rarity.rarity_score}</div>
+                            <div class="occurrence-info">
+                                This performance has occurred only ${perf.rarity.occurrence_count} times in ${perf.rarity.total_games} total games
+                            </div>
+                            <div class="occurrence-info">
+                                First seen: ${perf.rarity.first_occurrence.player_name} (${new Date(perf.rarity.first_occurrence.game_date).getFullYear()})
+                            </div>
+                        </div>
+                    `;
+
+                    container.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('performances').innerHTML =
+                    '<p>Error loading performance data. Please check back later.</p>';
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+</html>

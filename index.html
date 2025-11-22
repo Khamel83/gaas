@@ -32,29 +32,31 @@
         }
         .sports-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
             margin-bottom: 30px;
         }
         .sport-card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         .sport-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
         .sport-card h3 {
-            margin: 0 0 15px 0;
+            margin: 0 0 20px 0;
             color: #333;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-size: 1.3em;
         }
         .sport-icon {
-            font-size: 1.5em;
+            font-size: 1.8em;
         }
         .position-list {
             list-style: none;
@@ -62,37 +64,53 @@
             margin: 0;
         }
         .position-list li {
-            margin: 8px 0;
+            margin: 12px 0;
         }
         .position-list a {
             color: #007bff;
             text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 8px 15px;
+            border-radius: 6px;
             background: rgba(0,123,255,0.1);
             display: inline-block;
-            transition: background 0.2s;
+            transition: all 0.2s;
+            font-weight: 500;
         }
         .position-list a:hover {
             background: rgba(0,123,255,0.2);
+            transform: translateX(3px);
         }
-        .rarity-badge {
+        .status-badge {
             display: inline-block;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 12px;
-            font-size: 0.8em;
+            font-size: 0.75em;
             font-weight: bold;
-            margin-left: 5px;
+            margin-left: 8px;
+            text-transform: uppercase;
         }
-        .never-before { background: #ff4757; color: white; }
-        .extremely-rare { background: #ff6b81; color: white; }
-        .very-rare { background: #ffa502; color: white; }
-        .rare { background: #ffdd59; color: #333; }
+        .live { background: #28a745; color: white; }
+        .coming-soon { background: #6c757d; color: white; }
         .update-time {
             text-align: center;
             color: #666;
             font-size: 0.9em;
             margin-top: 30px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .coming-soon-section {
+            background: rgba(108, 117, 125, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .coming-soon-title {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -104,62 +122,89 @@
 
     <div class="sports-grid">
         <div class="sport-card">
-            <h3><span class="sport-icon">🏈</span> NFL</h3>
+            <h3><span class="sport-icon">🏈</span> NFL <span class="status-badge live">LIVE</span></h3>
             <ul class="position-list">
-                <li><a href="nfl/rb_latest.html">Running Backs</a> <span class="rarity-badge rare">7 Rare</span></li>
+                <li><a href="nfl/qb_latest.html">Quarterbacks</a></li>
+                <li><a href="nfl/rb_latest.html">Running Backs</a></li>
+                <li><a href="nfl/wr_latest.html">Wide Receivers</a></li>
+                <li><a href="nfl/te_latest.html">Tight Ends</a></li>
             </ul>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">🏀</span> NBA</h3>
-            <ul class="position-list">
-                <li><a href="nba/point_guard_latest.html">Point Guards</a></li>
-                <li><a href="nba/shooting_guard_latest.html">Shooting Guards</a></li>
-                <li><a href="nba/small_forward_latest.html">Small Forwards</a></li>
-                <li><a href="nba/power_forward_latest.html">Power Forwards</a></li>
-                <li><a href="nba/center_latest.html">Centers</a></li>
+            <h3><span class="sport-icon">🏀</span> NBA <span class="status-badge coming-soon">COMING SOON</span></h3>
+            <div class="coming-soon-section">
+                <div class="coming-soon-title">Data Available, Interface in Development</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Statistical data has been collected for all NBA positions. Interactive dashboards coming soon.</p>
+            </div>
+            <ul class="position-list" style="margin-top: 15px;">
+                <li style="opacity: 0.6;">Point Guards (Data Available)</li>
+                <li style="opacity: 0.6;">Shooting Guards (Data Available)</li>
+                <li style="opacity: 0.6;">Small Forwards (Data Available)</li>
+                <li style="opacity: 0.6;">Power Forwards (Data Available)</li>
+                <li style="opacity: 0.6;">Centers (Data Available)</li>
             </ul>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">⚾</span> MLB</h3>
-            <ul class="position-list">
-                <li><a href="mlb/pitcher_latest.html">Pitchers</a></li>
-                <li><a href="mlb/catcher_latest.html">Catchers</a></li>
-                <li><a href="mlb/infielder_latest.html">Infielders</a></li>
-                <li><a href="mlb/outfielder_latest.html">Outfielders</a></li>
+            <h3><span class="sport-icon">⚾</span> MLB <span class="status-badge coming-soon">COMING SOON</span></h3>
+            <div class="coming-soon-section">
+                <div class="coming-soon-title">Data Available, Interface in Development</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Historical and current season data collected. Web interface currently being developed.</p>
+            </div>
+            <ul class="position-list" style="margin-top: 15px;">
+                <li style="opacity: 0.6;">Pitchers (Data Available)</li>
+                <li style="opacity: 0.6;">Catchers (Data Available)</li>
+                <li style="opacity: 0.6;">Infielders (Data Available)</li>
+                <li style="opacity: 0.6;">Outfielders (Data Available)</li>
             </ul>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">🏎️</span> F1</h3>
-            <ul class="position-list">
-                <li><a href="f1/driver_latest.html">Drivers</a></li>
+            <h3><span class="sport-icon">🏎️</span> F1 <span class="status-badge coming-soon">COMING SOON</span></h3>
+            <div class="coming-soon-section">
+                <div class="coming-soon-title">Data Available, Interface in Development</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Race and qualifying data collected. Driver performance analysis coming soon.</p>
+            </div>
+            <ul class="position-list" style="margin-top: 15px;">
+                <li style="opacity: 0.6;">Drivers (Data Available)</li>
             </ul>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">⚽</span> Champions League</h3>
-            <ul class="position-list">
-                <li><a href="champions_league/forward_latest.html">Forwards</a></li>
-                <li><a href="champions_league/midfielder_latest.html">Midfielders</a></li>
-                <li><a href="champions_league/defender_latest.html">Defenders</a></li>
-                <li><a href="champions_league/goalkeeper_latest.html">Goalkeepers</a></li>
+            <h3><span class="sport-icon">⚽</span> Champions League <span class="status-badge coming-soon">COMING SOON</span></h3>
+            <div class="coming-soon-section">
+                <div class="coming-soon-title">Data Available, Interface in Development</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Match and player performance data collected. Interactive analysis coming soon.</p>
+            </div>
+            <ul class="position-list" style="margin-top: 15px;">
+                <li style="opacity: 0.6;">Forwards (Data Available)</li>
+                <li style="opacity: 0.6;">Midfielders (Data Available)</li>
+                <li style="opacity: 0.6;">Defenders (Data Available)</li>
+                <li style="opacity: 0.6;">Goalkeepers (Data Available)</li>
             </ul>
         </div>
 
         <div class="sport-card">
-            <h3><span class="sport-icon">🥅</span> NHL</h3>
-            <ul class="position-list">
-                <li><a href="nhl/forward_latest.html">Forwards</a></li>
-                <li><a href="nhl/defenseman_latest.html">Defensemen</a></li>
-                <li><a href="nhl/goalie_latest.html">Goalies</a></li>
+            <h3><span class="sport-icon">🥅</span> NHL <span class="status-badge coming-soon">COMING SOON</span></h3>
+            <div class="coming-soon-section">
+                <div class="coming-soon-title">Data Available, Interface in Development</div>
+                <p style="margin: 0; font-size: 0.9em; color: #6c757d;">Game and player statistics collected. Performance dashboards in development.</p>
+            </div>
+            <ul class="position-list" style="margin-top: 15px;">
+                <li style="opacity: 0.6;">Forwards (Data Available)</li>
+                <li style="opacity: 0.6;">Defensemen (Data Available)</li>
+                <li style="opacity: 0.6;">Goalies (Data Available)</li>
             </ul>
         </div>
     </div>
 
     <div class="update-time">
-        Last updated: <span id="update-time">Loading...</span>
+        <strong>About GAAS:</strong> Gami As A Service automatically detects statistically rare performances across multiple sports leagues.
+        Our algorithm analyzes historical data to identify performances that occur infrequently, providing context and rarity scores for each remarkable achievement.
+        <br><br>
+        Last updated: <span id="update-time">Loading...</span> |
+        <a href="https://github.com/Khamel83/gaas" target="_blank" style="color: #007bff;">View on GitHub</a>
     </div>
 
     <script>
@@ -168,10 +213,10 @@
             .then(response => response.json())
             .then(data => {
                 document.getElementById('update-time').textContent =
-                    new Date(data.last_updated).toLocaleString();
+                    new Date(data.last_updated || Date.now()).toLocaleString();
             })
             .catch(() => {
-                document.getElementById('update-time').textContent = 'Unknown';
+                document.getElementById('update-time').textContent = new Date().toLocaleString();
             });
     </script>
 </body>
