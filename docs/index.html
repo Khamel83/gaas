@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAAS - Gami As A Service</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .sport-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .sport-card:hover {
+            transform: translateY(-5px);
+        }
+        .sport-card h3 {
+            margin: 0 0 15px 0;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sport-icon {
+            font-size: 1.5em;
+        }
+        .position-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .position-list li {
+            margin: 8px 0;
+        }
+        .position-list a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background: rgba(0,123,255,0.1);
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        .position-list a:hover {
+            background: rgba(0,123,255,0.2);
+        }
+        .rarity-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .never-before { background: #ff4757; color: white; }
+        .extremely-rare { background: #ff6b81; color: white; }
+        .very-rare { background: #ffa502; color: white; }
+        .rare { background: #ffdd59; color: #333; }
+        .update-time {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏆 GAAS - Gami As A Service</h1>
+        <p>Discover statistically rare sports performances across multiple leagues</p>
+    </div>
+
+    <div class="sports-grid">
+        <div class="sport-card">
+            <h3><span class="sport-icon">🏈</span> NFL</h3>
+            <ul class="position-list">
+                <li><a href="nfl/rb_latest.html">Running Backs</a> <span class="rarity-badge rare">7 Rare</span></li>
+            </ul>
+        </div>
+
+        <div class="sport-card">
+            <h3><span class="sport-icon">🏀</span> NBA</h3>
+            <ul class="position-list">
+                <li><a href="nba/point_guard_latest.html">Point Guards</a></li>
+                <li><a href="nba/shooting_guard_latest.html">Shooting Guards</a></li>
+                <li><a href="nba/small_forward_latest.html">Small Forwards</a></li>
+                <li><a href="nba/power_forward_latest.html">Power Forwards</a></li>
+                <li><a href="nba/center_latest.html">Centers</a></li>
+            </ul>
+        </div>
+
+        <div class="sport-card">
+            <h3><span class="sport-icon">⚾</span> MLB</h3>
+            <ul class="position-list">
+                <li><a href="mlb/pitcher_latest.html">Pitchers</a></li>
+                <li><a href="mlb/catcher_latest.html">Catchers</a></li>
+                <li><a href="mlb/infielder_latest.html">Infielders</a></li>
+                <li><a href="mlb/outfielder_latest.html">Outfielders</a></li>
+            </ul>
+        </div>
+
+        <div class="sport-card">
+            <h3><span class="sport-icon">🏎️</span> F1</h3>
+            <ul class="position-list">
+                <li><a href="f1/driver_latest.html">Drivers</a></li>
+            </ul>
+        </div>
+
+        <div class="sport-card">
+            <h3><span class="sport-icon">⚽</span> Champions League</h3>
+            <ul class="position-list">
+                <li><a href="champions_league/forward_latest.html">Forwards</a></li>
+                <li><a href="champions_league/midfielder_latest.html">Midfielders</a></li>
+                <li><a href="champions_league/defender_latest.html">Defenders</a></li>
+                <li><a href="champions_league/goalkeeper_latest.html">Goalkeepers</a></li>
+            </ul>
+        </div>
+
+        <div class="sport-card">
+            <h3><span class="sport-icon">🥅</span> NHL</h3>
+            <ul class="position-list">
+                <li><a href="nhl/forward_latest.html">Forwards</a></li>
+                <li><a href="nhl/defenseman_latest.html">Defensemen</a></li>
+                <li><a href="nhl/goalie_latest.html">Goalies</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="update-time">
+        Last updated: <span id="update-time">Loading...</span>
+    </div>
+
+    <script>
+        // Load update time from index.json
+        fetch('index.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('update-time').textContent =
+                    new Date(data.last_updated).toLocaleString();
+            })
+            .catch(() => {
+                document.getElementById('update-time').textContent = 'Unknown';
+            });
+    </script>
+</body>
+</html>

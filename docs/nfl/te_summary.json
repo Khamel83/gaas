@@ -1,0 +1,16 @@
+{
+  "total_rare_performances": 16,
+  "average_rarity_score": 99.79,
+  "rarest_performance": {
+    "player_name": "George Kittle",
+    "rarity_score": 99.97,
+    "classification": "never_before"
+  },
+  "classification_breakdown": {
+    "very_rare": 2,
+    "rare": 6,
+    "extremely_rare": 6,
+    "never_before": 2
+  },
+  "generated_at": "2025-11-21T18:01:37.931456"
+}
