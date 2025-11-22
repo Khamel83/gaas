@@ -1,0 +1,140 @@
+name: Continuous Data Harvest
+on:
+  schedule:
+    # Run every 2 hours during off-peak times (rate limit consideration)
+    - cron: '0 2,4,6,8,10,14,16,18,20,22 * * *'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  harvest-baseball:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 2,4,6,8,10 * * *' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install aiohttp beautifulsoup4 asyncio sqlite3
+          mkdir -p logs data/harvest_downloads
+
+      - name: Harvest MLB Data
+        run: |
+          echo "Starting MLB harvest $(date)"
+          python src/harvest/reference_scraper.py --sport=mlb --max-players=10
+          echo "MLB harvest completed $(date)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  harvest-basketball:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 2,4,6,8,10 * * *' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install aiohttp beautifulsoup4 asyncio sqlite3
+
+      - name: Harvest NBA Data
+        run: |
+          echo "Starting NBA harvest $(date)"
+          python src/harvest/reference_scraper.py --sport=nba --max-players=8
+          echo "NBA harvest completed $(date)"
+
+  harvest-football:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 14,16,18,20,22 * * *' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install aiohttp beautifulsoup4 asyncio sqlite3
+
+      - name: Harvest NFL Data
+        run: |
+          echo "Starting NFL harvest $(date)"
+          python src/harvest/reference_scraper.py --sport=nfl --max-players=5
+          echo "NFL harvest completed $(date)"
+
+  github-discovery:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 2 * * 1' || github.event_name == 'workflow_dispatch'  # Weekly on Monday
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install aiohttp asyncio sqlite3
+
+      - name: Discover Sports Data Repositories
+        run: |
+          echo "Starting GitHub discovery $(date)"
+          python src/harvest/github_discovery.py --max-repos=15
+          echo "GitHub discovery completed $(date)"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  data-processing:
+    runs-on: ubuntu-latest
+    needs: [harvest-baseball, harvest-basketball, harvest-football]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Process New Data
+        run: |
+          echo "Processing newly harvested data $(date)"
+          python src/harvest/data_processor.py
+
+          # Generate updated web interface data
+          python scripts/generate_nba_data.py
+          python scripts/generate_mlb_data.py
+          python scripts/generate_nfl_data.py
+
+          echo "Data processing completed $(date)"
+
+      - name: Update Web Interface
+        run: |
+          # Copy updated JSON files to web directories
+          cp results/nba/nba_latest.json nba/
+          cp results/mlb/mlb_latest.json mlb/
+          cp results/nfl/rb_latest.json nfl/
+          cp results/nfl/qb_latest.json nfl/
+          cp results/nfl/wr_latest.json nfl/
+          cp results/nfl/te_latest.json nfl/
+
+          echo "Web interface updated $(date)"
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          git add -A
+          git commit -m "Auto-update: Harvested data $(date '+%Y-%m-%d %H:%M')"
+          git push
