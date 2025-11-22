@@ -1,10 +1,10 @@
 {
-  "generated_at": "2025-11-21T17:51:27.539011",
+  "generated_at": "2025-11-21T18:00:27.232597",
   "sport": "nfl",
   "position": "rb",
   "time_range": "all_time",
-  "top_n": 8,
-  "total_rare_performances": 8,
+  "top_n": 7,
+  "total_rare_performances": 7,
   "top_rare_performances": [
     {
       "game": {
@@ -63,9 +63,9 @@
           "rush_td_bucket": "2",
           "fumbles_bucket": "0"
         },
-        "rarity_score": 99.76,
+        "rarity_score": 99.77,
         "classification": "rare",
-        "total_games": 9181
+        "total_games": 9742
       }
     },
     {
@@ -125,9 +125,9 @@
           "rush_td_bucket": "1",
           "fumbles_bucket": "1"
         },
-        "rarity_score": 99.72,
+        "rarity_score": 99.73,
         "classification": "rare",
-        "total_games": 9181
+        "total_games": 9742
       }
     },
     {
@@ -187,71 +187,9 @@
           "rush_td_bucket": "0",
           "fumbles_bucket": "1"
         },
-        "rarity_score": 99.52,
+        "rarity_score": 99.55,
         "classification": "rare",
-        "total_games": 9181
-      }
-    },
-    {
-      "game": {
-        "game_id": "2024_17_00-0036139",
-        "player_id": "00-0036139",
-        "player_name": "Rico Dowdle",
-        "position": "RB",
-        "team": "DAL",
-        "opponent": "PHI",
-        "season": 2024,
-        "week": 17,
-        "rush_attempts": 23,
-        "rush_yards": 104,
-        "rush_td": 0,
-        "fumbles_lost": 1,
-        "game_date": "2024-12-29 00:00:00",
-        "rush_yards_bucket": "100-149",
-        "rush_td_bucket": "0",
-        "fumbles_bucket": "1"
-      },
-      "rarity": {
-        "occurrence_count": 22,
-        "first_occurrence": {
-          "game_id": "2018_03_00-0033045",
-          "player_id": "00-0033045",
-          "player_name": "Ezekiel Elliott",
-          "position": "RB",
-          "team": "DAL",
-          "opponent": "SEA",
-          "season": 2018,
-          "week": 3,
-          "rush_attempts": 16,
-          "rush_yards": 127,
-          "rush_td": 0,
-          "fumbles_lost": 1,
-          "game_date": "2018-09-22",
-          "rush_yards_bucket": "100-149",
-          "rush_td_bucket": "0",
-          "fumbles_bucket": "1"
-        },
-        "last_occurrence": {
-          "game_id": "2024_20_00-0037840",
-          "player_id": "00-0037840",
-          "player_name": "Kyren Williams",
-          "position": "RB",
-          "team": "LA",
-          "opponent": "PHI",
-          "season": 2024,
-          "week": 20,
-          "rush_attempts": 19,
-          "rush_yards": 106,
-          "rush_td": 0,
-          "fumbles_lost": 1,
-          "game_date": "2025-01-19",
-          "rush_yards_bucket": "100-149",
-          "rush_td_bucket": "0",
-          "fumbles_bucket": "1"
-        },
-        "rarity_score": 99.52,
-        "classification": "rare",
-        "total_games": 9181
+        "total_games": 9742
       }
     },
     {
@@ -311,9 +249,9 @@
           "rush_td_bucket": "3",
           "fumbles_bucket": "0"
         },
-        "rarity_score": 99.48,
+        "rarity_score": 99.51,
         "classification": "rare",
-        "total_games": 9181
+        "total_games": 9742
       }
     },
     {
@@ -373,71 +311,9 @@
           "rush_td_bucket": "2",
           "fumbles_bucket": "0"
         },
-        "rarity_score": 99.48,
+        "rarity_score": 99.51,
         "classification": "rare",
-        "total_games": 9181
-      }
-    },
-    {
-      "game": {
-        "game_id": "2024_18_00-0038542",
-        "player_id": "00-0038542",
-        "player_name": "Bijan Robinson",
-        "position": "RB",
-        "team": "ATL",
-        "opponent": "CAR",
-        "season": 2024,
-        "week": 18,
-        "rush_attempts": 28,
-        "rush_yards": 170,
-        "rush_td": 2,
-        "fumbles_lost": 0,
-        "game_date": "2025-01-05 00:00:00",
-        "rush_yards_bucket": "150-199",
-        "rush_td_bucket": "2",
-        "fumbles_bucket": "0"
-      },
-      "rarity": {
-        "occurrence_count": 24,
-        "first_occurrence": {
-          "game_id": "2018_13_00-0034109",
-          "player_id": "00-0034109",
-          "player_name": "Phillip Lindsay",
-          "position": "RB",
-          "team": "DEN",
-          "opponent": "CIN",
-          "season": 2018,
-          "week": 13,
-          "rush_attempts": 19,
-          "rush_yards": 157,
-          "rush_td": 2,
-          "fumbles_lost": 0,
-          "game_date": "2018-12-01",
-          "rush_yards_bucket": "150-199",
-          "rush_td_bucket": "2",
-          "fumbles_bucket": "0"
-        },
-        "last_occurrence": {
-          "game_id": "2024_19_00-0032764",
-          "player_id": "00-0032764",
-          "player_name": "Derrick Henry",
-          "position": "RB",
-          "team": "BAL",
-          "opponent": "PIT",
-          "season": 2024,
-          "week": 19,
-          "rush_attempts": 26,
-          "rush_yards": 186,
-          "rush_td": 2,
-          "fumbles_lost": 0,
-          "game_date": "2025-01-12",
-          "rush_yards_bucket": "150-199",
-          "rush_td_bucket": "2",
-          "fumbles_bucket": "0"
-        },
-        "rarity_score": 99.48,
-        "classification": "rare",
-        "total_games": 9181
+        "total_games": 9742
       }
     },
     {
@@ -497,9 +373,71 @@
           "rush_td_bucket": "3",
           "fumbles_bucket": "0"
         },
-        "rarity_score": 99.48,
+        "rarity_score": 99.51,
         "classification": "rare",
-        "total_games": 9181
+        "total_games": 9742
+      }
+    },
+    {
+      "game": {
+        "game_id": "2024_18_00-0038542",
+        "player_id": "00-0038542",
+        "player_name": "Bijan Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "opponent": "CAR",
+        "season": 2024,
+        "week": 18,
+        "rush_attempts": 28,
+        "rush_yards": 170,
+        "rush_td": 2,
+        "fumbles_lost": 0,
+        "game_date": "2025-01-05 00:00:00",
+        "rush_yards_bucket": "150-199",
+        "rush_td_bucket": "2",
+        "fumbles_bucket": "0"
+      },
+      "rarity": {
+        "occurrence_count": 24,
+        "first_occurrence": {
+          "game_id": "2018_13_00-0034109",
+          "player_id": "00-0034109",
+          "player_name": "Phillip Lindsay",
+          "position": "RB",
+          "team": "DEN",
+          "opponent": "CIN",
+          "season": 2018,
+          "week": 13,
+          "rush_attempts": 19,
+          "rush_yards": 157,
+          "rush_td": 2,
+          "fumbles_lost": 0,
+          "game_date": "2018-12-01",
+          "rush_yards_bucket": "150-199",
+          "rush_td_bucket": "2",
+          "fumbles_bucket": "0"
+        },
+        "last_occurrence": {
+          "game_id": "2024_19_00-0032764",
+          "player_id": "00-0032764",
+          "player_name": "Derrick Henry",
+          "position": "RB",
+          "team": "BAL",
+          "opponent": "PIT",
+          "season": 2024,
+          "week": 19,
+          "rush_attempts": 26,
+          "rush_yards": 186,
+          "rush_td": 2,
+          "fumbles_lost": 0,
+          "game_date": "2025-01-12",
+          "rush_yards_bucket": "150-199",
+          "rush_td_bucket": "2",
+          "fumbles_bucket": "0"
+        },
+        "rarity_score": 99.51,
+        "classification": "rare",
+        "total_games": 9742
       }
     }
   ]

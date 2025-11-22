@@ -1,14 +1,18 @@
 {
-  "last_updated": "2025-11-21T17:51:27.540201",
+  "last_updated": "2025-11-21T18:00:27.257652",
+  "total_rare_performances": 7,
   "sports": {
     "nfl": {
       "positions": [
         "rb"
       ],
-      "files": {
-        "rb": {
-          "latest": "nfl/rb_latest.json",
-          "all_time": "nfl/rb_all_time.json"
+      "rb": {
+        "files": {
+          "rb": {
+            "latest": "nfl/rb_latest.json",
+            "all_time": "nfl/rb_all_time.json",
+            "summary": "nfl/rb_summary.json"
+          }
         }
       }
     }
