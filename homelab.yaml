@@ -1,0 +1,33 @@
+schema: homelab.project/v1
+project:
+  id: gaas
+  name: Gaas
+  repository: https://github.com/Khamel83/gaas
+  kind: service
+  lifecycle: development
+  owner: homelab
+monitoring:
+  state: standby
+runtime:
+  production:
+    host: homelab
+    managed_by: unknown
+    unit: gaas
+    sync_mode: homelab-native
+health:
+  source: homelab-api
+  checks: []
+observability:
+  event_sink: homelab-api:/observations
+  evidence_policy: sanitized
+dependencies:
+  required: []
+  optional: []
+secrets:
+  broker_consumer: gaas
+  references: []
+operations:
+  repair_ids: []
+docs:
+  index: README.md
+  operations: docs/OPERATIONS.md
